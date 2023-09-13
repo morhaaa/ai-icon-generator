@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gradient-to-br from-zinc-500 to-zinc-900">
+      <body className="bg-gradient-to-br from-blue-900 via-indigo-900 to-violet-900 h-screen w-screen flex flex-col items-center">
         <Navbar />
         {children}
       </body>
