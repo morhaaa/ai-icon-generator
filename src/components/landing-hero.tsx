@@ -1,4 +1,4 @@
-import LandingButton from "./ui/landing-button";
+import Button from "./ui/button";
 
 export default function LandingHero() {
   return (
@@ -17,7 +17,7 @@ export default function LandingHero() {
               className="w-full text-sm md:text-base lg:text-xl text-black outline-none bg-transparent font-medium"
               placeholder="provvaaaaa"
             />
-            <LandingButton>Start Generation</LandingButton>
+            <Button>Start Generation</Button>
           </div>
         </div>
       </div>

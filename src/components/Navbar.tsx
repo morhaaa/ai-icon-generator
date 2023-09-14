@@ -1,4 +1,4 @@
-import LandingButton from "@/components/ui/landing-button";
+import Button from "@/components/ui/button";
 import { Montserrat } from "next/font/google";
 
 const monserrat = Montserrat({ subsets: ["latin"] });
@@ -9,9 +9,9 @@ const Navbar: React.FC = () => {
       <div className={monserrat.className}>
         <p className="font-semibold text-white text-2xl">AIconGenerator</p>
       </div>
-      <LandingButton>
+      <Button>
         <p>SIGN IN</p>
-      </LandingButton>
+      </Button>
     </nav>
   );
 };
