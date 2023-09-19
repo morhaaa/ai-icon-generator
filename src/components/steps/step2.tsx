@@ -3,6 +3,7 @@ import Button from "../ui/button";
 import { useState } from "react";
 import { colorList } from "@/utilities/constant";
 import clsx from "clsx";
+import ColorSelection from "../ui/elements";
 
 interface Props {
   next: () => void;
@@ -17,18 +18,23 @@ const Step2: React.FC<Props> = ({ back, next }) => {
   const [selectedColor, setSelectedColor] = useState<string>("");
   const [selectedSection, setSelectedSection] = useState<Section>("Predefined");
 
+  const setColor = (color: string) => {
+    setSelectedColor(color);
+  };
+
   return (
-    <div className="h-full w-full flex flex-col justify-between gap-4 overscroll-scroll">
-      {/**/}
-      <div className="flex flex-col gap-6 w-full h-full overflow-scroll">
+    <div className="h-full w-full flex flex-col justify-between gap-4 overflow-hidden">
+      <div className="flex flex-col gap-6 w-full h-full overflow-hidden">
+        {/*title*/}
         <h2 className="text-white font-medium text-2xl md:text-2xl lg:text-4xl ">
           2-{" "}
           <span className="underline underline-offset-8">
-            Select a primary color for your icon
+            Select a primary color
           </span>
         </h2>
 
-        <div className="flex flex-col gap-2 h-full">
+        <div className="flex flex-col gap-2 h-full w-full overflow-hidden">
+          {/*section navbar*/}
           <nav className="flex gap-4 px-2">
             {sections.map((section, index) => (
               <h4
@@ -44,35 +50,27 @@ const Step2: React.FC<Props> = ({ back, next }) => {
             ))}
           </nav>
 
-          <div className="flex items-start justify-center h-full px-6 md:px-6 lg:px-8 bg-gray-900/20 py-6 md:py-6 lg:py-8 rounded-xl overflow-scroll">
-            <div className="flex items-center flex-wrap gap-4 lg:gap-4 md:gap-4 flex-row ">
-              {colorList.map((color, index) => (
-                <div
-                  key={index}
-                  onClick={() => setSelectedColor(color)}
-                  className="w-14 h-14 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-lg hover:scale-110 cursor-pointer drop-shadow-2xl"
-                  style={{
-                    backgroundColor: color,
-                    opacity: color === selectedColor ? 1 : 0.45,
-                    border: color === selectedColor ? "4px solid white" : "",
-                  }}
-                ></div>
-              ))}
-            </div>
+          {/*list color */}
+          <div className="flex items-center justify-center h-full w-full bg-black/10 border border-slate-700 rounded-xl overflow-y-scroll overflow-x-none">
+            <ColorSelection
+              selectedColor={selectedColor}
+              setSelectedColor={setColor}
+            />
           </div>
         </div>
       </div>
 
+      {/*buttons */}
       <div className="flex justify-end items-center gap-4">
         <Button onClick={back}>
-          <div className="flex items-center justify-center gap-2 px-2 py-1">
+          <div className="flex items-center justify-center gap-2 lg:px-2 lg:py-1">
             <BiLeftArrowAlt />
-            <p className="text-xl">Back</p>
+            <p className="lg:text-xl text-lg ">Back</p>
           </div>
         </Button>
         <Button onClick={next}>
-          <div className="flex items-center justify-center gap-2 px-2 py-1">
-            <p className="text-xl">Next</p>
+          <div className="flex items-center justify-center gap-2 lg:px-2 lg:py-1">
+            <p className="text-lg lg:text-xl">Next</p>
             <BiRightArrowAlt />
           </div>
         </Button>

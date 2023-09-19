@@ -52,8 +52,10 @@ const Generator: React.FC = () => {
   };
 
   return (
-    <div className="h-full w-full flex flex-col items-center justify-center">
-      <div className="w-[80%] md:w-[70%] h-[80%]">{switchStep()}</div>
+    <div className="h-full w-full flex flex-col items-center justify-center overflow-hidden">
+      <div className="w-[80%] md:w-[70%] h-[85%] md:h-[80%] overflow-hidden">
+        {switchStep()}
+      </div>
     </div>
   );
 };
