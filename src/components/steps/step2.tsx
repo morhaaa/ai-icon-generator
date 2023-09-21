@@ -4,6 +4,7 @@ import { useState } from "react";
 import { colorList } from "@/utilities/constant";
 import clsx from "clsx";
 import ColorSelection from "../ui/elements";
+import ColorPicker from "../ui/color-picker";
 
 interface Props {
   next: () => void;
@@ -52,10 +53,13 @@ const Step2: React.FC<Props> = ({ back, next }) => {
 
           {/*list color */}
           <div className="flex items-center justify-center h-full w-full bg-black/10 border border-slate-700 rounded-xl overflow-y-scroll overflow-x-none">
-            <ColorSelection
-              selectedColor={selectedColor}
-              setSelectedColor={setColor}
-            />
+            {selectedSection === "Predefined" && (
+              <ColorSelection
+                selectedColor={selectedColor}
+                setSelectedColor={setColor}
+              />
+            )}
+            {selectedSection === "Picker" && <ColorPicker />}
           </div>
         </div>
       </div>
