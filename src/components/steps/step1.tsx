@@ -16,7 +16,11 @@ const Step1: React.FC<Props> = ({ next }) => {
           </span>
         </h2>
         <div className="px-4 lg:px-10 flex flex-col gap-8">
-          <InputGenerator />
+          <InputGenerator
+            placeholder="a happy turtle"
+            size="medium"
+            textButton="prova"
+          />
           <div className="flex flex-col gap-2  text-white md:pl-8 pt-4">
             <span className="font-medium text-2xl">Tips:</span>
             <ul className="list-disc pl-6 overflow-scroll">

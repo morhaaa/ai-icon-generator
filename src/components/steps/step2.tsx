@@ -11,9 +11,9 @@ interface Props {
   back: () => void;
 }
 
-type Section = "Predefined" | "Picker" | "Custom";
+type Section = "Predefined" | "Picker";
 
-const sections: Section[] = ["Predefined", "Picker", "Custom"];
+const sections: Section[] = ["Predefined", "Picker"];
 
 const Step2: React.FC<Props> = ({ back, next }) => {
   const [selectedColor, setSelectedColor] = useState<string>("");
@@ -35,7 +35,7 @@ const Step2: React.FC<Props> = ({ back, next }) => {
         </h2>
 
         <div className="flex flex-col gap-2 h-full w-full overflow-hidden">
-          {/*section navbar*/}
+          {/*navbar*/}
           <nav className="flex gap-4 px-2">
             {sections.map((section, index) => (
               <h4
@@ -51,15 +51,16 @@ const Step2: React.FC<Props> = ({ back, next }) => {
             ))}
           </nav>
 
-          {/*list color */}
+          {/*Colors*/}
           <div className="flex items-center justify-center h-full w-full bg-black/10 border border-slate-700 rounded-xl overflow-y-scroll overflow-x-none">
-            {selectedSection === "Predefined" && (
+            {selectedSection === "Predefined" ? (
               <ColorSelection
                 selectedColor={selectedColor}
                 setSelectedColor={setColor}
               />
+            ) : (
+              <ColorPicker />
             )}
-            {selectedSection === "Picker" && <ColorPicker />}
           </div>
         </div>
       </div>
