@@ -1,9 +1,8 @@
 import { BiRightArrowAlt, BiLeftArrowAlt } from "react-icons/bi";
 import Button from "../ui/button";
 import { useState } from "react";
-import { colorList } from "@/utilities/constant";
 import clsx from "clsx";
-import ColorSelection from "../ui/elements";
+import ColorSelection from "../ui/color-list";
 import ColorPicker from "../ui/color-picker";
 
 interface Props {

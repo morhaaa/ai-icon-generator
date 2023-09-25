@@ -57,3 +57,35 @@ export const colorList = [
   "#B8860B",
   "#8B4513",
 ];
+
+export interface Icon {
+  img: string;
+  style: string;
+}
+
+export const icons: Icon[] = [
+  { img: "", style: "Metallic" },
+  { img: "", style: "Polygon" },
+  { img: "", style: "Pixelated" },
+  { img: "", style: "Clay" },
+  { img: "", style: "Gradient" },
+  { img: "", style: "Flat" },
+  { img: "", style: "Illustrated" },
+  { img: "", style: "Minimalistic" },
+  { img: "", style: "Hand-drawn" },
+  { img: "", style: "Watercolor" },
+  { img: "", style: "Isometric" },
+  { img: "", style: "Neon" },
+  { img: "", style: "Cartoonish" },
+  { img: "", style: "3d" },
+  { img: "", style: "Line-art" },
+  { img: "", style: "Pop-art" },
+  { img: "", style: "Doodle" },
+  { img: "", style: "Grunge" },
+  { img: "", style: "Sticker" },
+  { img: "", style: "Realistic" },
+  { img: "", style: "Mosaic" },
+  { img: "", style: "Origami" },
+  { img: "", style: "Chalkboard" },
+  { img: "", style: "Woodcut" },
+];

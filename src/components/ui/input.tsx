@@ -43,7 +43,7 @@ const InputGenerator: React.FC<Props> = ({
     >
       <input
         className={clsx("bg-transparent outline-none text-white w-full ", {
-          "pl-4text-xl md:text-xl": size === "medium",
+          "pl-4 text-xl md:text-xl py-2": size === "medium",
           "pl-2 md:pl-4": size === "small",
         })}
         placeholder={placeholder}
@@ -54,7 +54,7 @@ const InputGenerator: React.FC<Props> = ({
           type="button"
           onClick={onClick}
           className={clsx("text-white bg-gray-800 border rounded-lg", {
-            "text-xl md:text-xl py-1 px-6": size === "medium",
+            "text-xl md:text-xl py-2 px-6": size === "medium",
             "py-1 px-4": size === "small",
           })}
         >
