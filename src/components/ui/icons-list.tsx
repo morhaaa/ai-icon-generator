@@ -14,20 +14,19 @@ const IconsList: React.FC<Props> = ({ setSelectedIcon, selectedIcon }) => {
         <div
           key={index}
           onClick={() => setSelectedIcon(icon)}
-          className="hover:scale-110 cursor-pointer drop-shadow-2xl flex flex-col items-center px-2"
+          className="hover:scale-110 cursor-pointer drop-shadow-2xl flex flex-col items-center px-2 w-32 h-32"
           style={{
-            opacity: icon === selectedIcon ? 1 : 0.45,
+            opacity: icon === selectedIcon ? 1 : 0.65,
           }}
         >
           <div
             style={{
-              opacity: icon === selectedIcon ? 1 : 0.45,
               border: icon === selectedIcon ? "4px solid white" : "",
             }}
           >
             <Image
-              height={70}
-              width={70}
+              height={90}
+              width={90}
               src="/assets/draft.png"
               alt={icon.style}
             />

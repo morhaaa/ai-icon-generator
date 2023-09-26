@@ -3,6 +3,7 @@
 import Step1 from "@/components/steps/step1";
 import Step2 from "@/components/steps/step2";
 import Step3 from "@/components/steps/step3";
+import Step4 from "@/components/steps/step4";
 import { useState } from "react";
 
 type Step = 1 | 2 | 3 | 4;
@@ -48,7 +49,7 @@ const Generator: React.FC = () => {
       case 3:
         return <Step3 next={next} back={back} />;
       case 4:
-        return <Step2 next={next} back={back} />;
+        return <Step4 back={back} />;
     }
   };
 
