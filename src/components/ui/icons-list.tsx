@@ -9,29 +9,34 @@ interface Props {
 
 const IconsList: React.FC<Props> = ({ setSelectedIcon, selectedIcon }) => {
   return (
-    <div className="flex flex-row flex-wrap  gap-4 md:gap-4 lg:gap-6 pl-8 py-6 pr-4 h-full w-full">
+    <div className="flex flex-row flex-wrap  gap-2 md:gap-4 lg:gap-2 px-2 py-6 h-full w-full">
       {icons.map((icon, index) => (
         <div
           key={index}
           onClick={() => setSelectedIcon(icon)}
-          className="hover:scale-110 cursor-pointer drop-shadow-2xl flex flex-col items-center px-2 w-32 h-32"
+          className="hover:scale-110 transition ease-in-out delay-75 cursor-pointer drop-shadow-2xl flex flex-col items-center px-2 w-24 md:w-28 h-28"
           style={{
             opacity: icon === selectedIcon ? 1 : 0.65,
           }}
         >
           <div
             style={{
-              border: icon === selectedIcon ? "4px solid white" : "",
+              border:
+                icon === selectedIcon
+                  ? "4px solid white"
+                  : "4px solid transparent",
             }}
           >
             <Image
-              height={90}
-              width={90}
+              height={70}
+              width={70}
               src="/assets/draft.png"
               alt={icon.style}
             />
           </div>
-          <p className="text-white">{icon.style}</p>
+          <p className="text-white text-xs md:text-sm lg:text-sm">
+            {icon.style}
+          </p>
         </div>
       ))}
     </div>
