@@ -28,8 +28,8 @@ const IconsList: React.FC<Props> = ({ setSelectedIcon, selectedIcon }) => {
             }}
           >
             <Image
-              height={70}
-              width={70}
+              height={90}
+              width={90}
               src="/assets/draft.png"
               alt={icon.style}
             />

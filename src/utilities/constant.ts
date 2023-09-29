@@ -1,61 +1,14 @@
 export const colorList = [
-  //Yellow
-  "#FFD700",
-  "#FFFF00",
-  "#FFE4B5",
-  //Orange
-  "#FFA07A",
-  "#FFA500",
-  "#FF8C00",
-  //red
-  "#FA8072",
-  "#CD5C5C",
-  "#ef233c",
-  "#FF0000",
-  "#8B0000",
-  //Green
-  "#ADFF2F",
-  "#00FF00",
-  "#32CD32",
-  "#228B22",
-  "#008000",
-  //pink
-  "#FFC0CB",
-  "#FFB6C1",
-  "#FF1493",
-  "#DB7093",
-  //Purple
-  "#DDA0DD",
-  "#EE82EE",
-  "#FF00FF",
-  "#BA55D3",
-  "#9370DB",
-  "#9400D3",
-  "#4B0082",
-  "#483D8B",
-  //Blue
-  "#00FFFF",
-  "#AFEEEE",
-  "#48D1CC",
-  "#87CEFA",
-  "#6495ED",
-  "#4169E1",
-  "#0000FF",
-  "#000080",
-  //Gray
-  "#000000",
-  "#708090",
-  "#808080",
-  "#C0C0C0",
-  "#DCDCDC",
-  "#FFFFFF",
-  //Brown
-  "#FFF8DC",
-  "#F5DEB3",
-  "#DEB887",
-  "#F4A460",
-  "#B8860B",
-  "#8B4513",
+  "#FFD700", // Yellow
+  "#FFA07A", // Light Salmon
+  "#FF1493", // Deep Pink
+  "#00FF00", // Lime
+  "#9370DB", // Medium Purple
+  "#00FFFF", // Cyan
+  "#87CEFA", // Light Sky Blue
+  "#8B4513", // Saddle Brown
+  "#FFC0CB", // Pink
+  "#ADFF2F", // Green Yellow
 ];
 
 export interface Icon {
@@ -89,3 +42,5 @@ export const icons: Icon[] = [
   { img: "", style: "Chalkboard" },
   { img: "", style: "Woodcut" },
 ];
+
+export const imagesOptions = [1, 2, 3, 4, 5, 6, 7, 8];

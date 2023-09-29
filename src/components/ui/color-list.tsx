@@ -13,7 +13,7 @@ const Colors: React.FC<Props> = ({ selectedColor, setSelectedColor }) => {
         <div
           key={index}
           onClick={() => setSelectedColor(color)}
-          className="w-14 h-14 md:h-14 md:w-14 lg:h-[70px] lg:w-[70px] rounded-lg hover:scale-110 cursor-pointer drop-shadow-2xl"
+          className="w-10 h-10 md:h-14 md:w-14 lg:h-[70px] lg:w-[70px] rounded-full hover:scale-110 cursor-pointer drop-shadow-2xl"
           style={{
             backgroundColor: color,
             opacity: color === selectedColor ? 1 : 0.45,
