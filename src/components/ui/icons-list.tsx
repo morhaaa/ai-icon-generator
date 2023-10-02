@@ -9,7 +9,7 @@ interface Props {
 
 const IconsList: React.FC<Props> = ({ setSelectedIcon, selectedIcon }) => {
   return (
-    <div className="flex flex-row flex-wrap  gap-2 md:gap-4 lg:gap-2 px-2 py-6 h-full w-full">
+    <div className="flex flex-row flex-wrap gap-2 justify-center md:gap-2 lg:gap-2 px-2 py-6 h-full w-full">
       {icons.map((icon, index) => (
         <div
           key={index}

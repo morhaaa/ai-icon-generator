@@ -15,10 +15,10 @@ const Generator: React.FC = () => {
   const next = () => {};
   const steps = [<Step1 />, <Step2 />, <Step3 />, <Step4 />];
   return (
-    <div className="h-full w-full flex flex-col items-center overflow-hidden py-16 ">
-      <div className="w-[87%] md:w-[80%] flex-1 bg-blue-950/70 overflow-scroll  py-4 px-8 md:px-14 lg:px-16 xl:px-20 rounded-xl flex flex-col border border-slate-600 shadow-2xl">
+    <div className="h-full w-full flex flex-col items-center overflow-hidden py-10 ">
+      <div className="w-[90%] md:w-[80%] flex-1 bg-blue-950/50 overflow-scroll  py-6 px-8 md:px-14 lg:px-16 xl:px-20 rounded-xl flex flex-col border border-slate-600 shadow-2xl">
         {steps.map((step, index) => (
-          <div key={index} className="border-b border-slate-600 py-8 ">
+          <div key={index} className="border-b border-slate-600 py-8 lg:py-10 ">
             {step}
           </div>
         ))}
