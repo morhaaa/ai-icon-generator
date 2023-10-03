@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-gradient-to-br from-blue-900 via-indigo-900 to-violet-900 h-screen w-screen flex flex-col items-center ">
         <Navbar />
-        {children}
+        <main className="flex-1 w-full overflow-auto">{children}</main>
       </body>
     </html>
   );
