@@ -16,7 +16,7 @@ const Colors: React.FC<Props> = ({ selectedColor, setSelectedColor }) => {
           className="h-[50px] w-[50px] lg:h-[60px] lg:w-[60px] xl:h-[70px] xl:w-[70px] rounded-full hover:scale-110 cursor-pointer shadow-xl"
           style={{
             backgroundColor: color,
-            opacity: color === selectedColor ? 1 : 0.65,
+            opacity: color === selectedColor ? 1 : 0.75,
             border: color === selectedColor ? "4px solid white" : "",
           }}
         ></div>

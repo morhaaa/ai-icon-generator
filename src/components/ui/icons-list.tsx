@@ -16,7 +16,7 @@ const IconsList: React.FC<Props> = ({ setSelectedIcon, selectedIcon }) => {
           onClick={() => setSelectedIcon(icon)}
           className="hover:scale-110 transition ease-in-out delay-75 cursor-pointer drop-shadow-2xl flex flex-col items-center px-2 w-24 md:w-28 h-28"
           style={{
-            opacity: icon === selectedIcon ? 1 : 0.65,
+            opacity: icon === selectedIcon ? 1 : 0.75,
           }}
         >
           <div

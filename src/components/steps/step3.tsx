@@ -14,7 +14,7 @@ const Step3: React.FC<Props> = () => {
           Select a style for your icon
         </h2>
 
-        <div className="flex items-center justify-center h-full w-full bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 border border-slate-700 rounded-xl overflow-y-scroll overflow-x-none">
+        <div className="flex items-center justify-center h-full w-full bg-gradient-to-br from-black via-slate-900 to-black border border-slate-700 rounded-xl overflow-y-scroll overflow-x-none">
           <IconsList
             selectedIcon={selectedIcon}
             setSelectedIcon={setSelectedIcon}
