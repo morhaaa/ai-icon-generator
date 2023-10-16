@@ -5,7 +5,6 @@ import Step3 from "@/components/steps/step3";
 import Step4 from "@/components/steps/step4";
 import Button from "@/components/ui/button";
 import { BiRightArrowAlt, BiLeftArrowAlt } from "react-icons/bi";
-import { useState } from "react";
 
 interface Props {}
 
