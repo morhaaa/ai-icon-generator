@@ -4,6 +4,7 @@ import { useState } from "react";
 interface Props {
   size: "small" | "medium";
   placeholder: string;
+  value?: string;
   onChange?: (text: string) => void;
   textButton?: string;
   submit?: (text: string) => void;
@@ -12,6 +13,7 @@ interface Props {
 const InputGenerator: React.FC<Props> = ({
   size,
   placeholder,
+  value,
   onChange,
   textButton,
   submit,
@@ -19,6 +21,7 @@ const InputGenerator: React.FC<Props> = ({
   const [inputText, setInputText] = useState<string>("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
     setInputText(event.currentTarget.value);
     if (onChange) {
       onChange(inputText);
@@ -31,8 +34,13 @@ const InputGenerator: React.FC<Props> = ({
     }
   };
 
+  const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
+
   return (
     <form
+      onSubmit={handleSubmit}
       className={clsx(
         "w-full bg-white rounded-xl bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 border border-slate-700 drop-shadow-2xl shadow-xl flex justify-between items-center",
         {
@@ -47,6 +55,7 @@ const InputGenerator: React.FC<Props> = ({
           "pl-2 md:pl-4": size === "small",
         })}
         placeholder={placeholder}
+        value={value}
         onChange={handleChange}
       />
       {textButton && (

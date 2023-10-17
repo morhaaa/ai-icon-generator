@@ -20,6 +20,7 @@ const Step2: React.FC<Props> = ({ back, next }) => {
 
   const setColor = (color: string) => {
     setSelectedColor(color);
+    console.log(color);
   };
 
   return (
@@ -54,7 +55,7 @@ const Step2: React.FC<Props> = ({ back, next }) => {
               setSelectedColor={setColor}
             />
           ) : (
-            <ColorPicker />
+            <ColorPicker setSelectedColor={setColor} />
           )}
         </div>
       </div>

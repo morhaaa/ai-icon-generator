@@ -2,8 +2,12 @@ import { useState } from "react";
 import InputGenerator from "./input";
 import { RgbColorPicker, RgbColor } from "react-colorful";
 
-const ColorPicker: React.FC = () => {
-  const [selectedColor, setSelectedColor] = useState<string>("#ff0000");
+interface Props {
+  setSelectedColor: (color: string) => void;
+}
+
+const ColorPicker: React.FC<Props> = ({ setSelectedColor }) => {
+  const [color, setColor] = useState<string>("#ff0000");
   const [isCorrect, setIsCorrect] = useState<boolean>(true);
 
   function checkValue(value: string): boolean {
@@ -24,6 +28,7 @@ const ColorPicker: React.FC = () => {
     const hexG = validG.toString(16).padStart(2, "0");
     const hexB = validB.toString(16).padStart(2, "0");
 
+    setColor(`#${hexR}${hexG}${hexB}`);
     setSelectedColor(`#${hexR}${hexG}${hexB}`);
   };
 
@@ -41,6 +46,7 @@ const ColorPicker: React.FC = () => {
   const submit = (text: string): void => {
     if (checkValue(text)) {
       setIsCorrect(true);
+      setColor(text);
       setSelectedColor(text);
     } else {
       setIsCorrect(false);
@@ -51,9 +57,9 @@ const ColorPicker: React.FC = () => {
     <div className="h-full w-full flex items-center justify-center">
       <div className="flex flex-col items-center justify-center gap-4 py-8 px-4 rounded-xl">
         <div className="flex flex-col items-center justify-end bg-white rounded-xl ">
-          <RgbColorPicker onChange={rgbToHex} color={hexToRgb(selectedColor)} />
+          <RgbColorPicker onChange={rgbToHex} color={hexToRgb(color)} />
           <div className="py-2 bg-white">
-            <span className="">{selectedColor}</span>
+            <span className="">{color}</span>
           </div>
         </div>
 

@@ -35,7 +35,7 @@ const CardsPagination: React.FC<Props> = ({}) => {
   return (
     <div className="h-full w-full flex flex-col overflow-hidden">
       <div className="flex-1 flex overflow-hidden px-4 py-4">
-        <div className="flex  gap-4 flex-wrap overflow-scroll">
+        <div className="flex justify-center gap-4 flex-wrap overflow-scroll w-full">
           {paginatedIcons.map((icon, index) => (
             <div key={index}>
               <IconGenerated />

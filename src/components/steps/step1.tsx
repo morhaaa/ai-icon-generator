@@ -5,9 +5,16 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { ReactEventHandler, useState } from "react";
 
 interface Props {}
 const Step1: React.FC<Props> = () => {
+  const [text, setText] = useState<string>("");
+
+  const handleInput = (txt: string): void => {
+    setText(txt);
+  };
+
   return (
     <div className="w-full flex flex-col gap-6 justify-between">
       <h2 className="text-white font-medium text-2xl md:text-3xl">
@@ -15,7 +22,11 @@ const Step1: React.FC<Props> = () => {
       </h2>{" "}
       {/*Content */}
       <div className="flex flex-col gap-4">
-        <InputGenerator placeholder="a happy turtle" size="medium" />
+        <InputGenerator
+          placeholder="a happy turtle"
+          size="medium"
+          onChange={handleInput}
+        />
         <div className="px-2 text-white flex gap-2 items-center">
           <p className="text-sm">
             {" "}
