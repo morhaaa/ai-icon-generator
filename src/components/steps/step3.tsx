@@ -6,6 +6,7 @@ interface Props {}
 
 const Step3: React.FC<Props> = () => {
   const [selectedIcon, setSelectedIcon] = useState<Icon | undefined>();
+
   return (
     <div className="h-full w-full flex flex-col justify-between gap-4 overflow-hidden">
       <div className="flex flex-col gap-6 w-full h-full overflow-hidden">

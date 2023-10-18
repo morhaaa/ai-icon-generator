@@ -6,10 +6,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useState } from "react";
 
 interface Props {}
 
 const Step4: React.FC<Props> = () => {
+  const [valueSelector, setValueSelector] = useState<any>();
+
   return (
     <div className="w-full h-full flex flex-col justify-between">
       <div className="flex flex-col gap-6 justify-start">
@@ -23,7 +26,11 @@ const Step4: React.FC<Props> = () => {
         </div>
 
         <div className="flex w-full flex-col gap-4  ">
-          <Select>
+          <Select
+            onValueChange={(value) => {
+              setValueSelector(value);
+            }}
+          >
             <SelectTrigger className=" w-full md:w-[200px]  bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 border border-slate-700 drop-shadow-2xl shadow-xl  text-white text-base">
               <SelectValue placeholder="Select" />
             </SelectTrigger>
