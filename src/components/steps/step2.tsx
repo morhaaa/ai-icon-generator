@@ -4,23 +4,24 @@ import { useState } from "react";
 import clsx from "clsx";
 import ColorSelection from "../ui/color-list";
 import ColorPicker from "../ui/color-picker";
-
-interface Props {
-  next?: () => void;
-  back?: () => void;
-}
+import { useDispatch } from "react-redux";
+import { setColor } from "@/app/containers/form-reducer";
 
 type Section = "Predefined" | "Picker";
 
 const sections: Section[] = ["Predefined", "Picker"];
 
-const Step2: React.FC<Props> = ({ back, next }) => {
+const Step2: React.FC = () => {
   const [selectedColor, setSelectedColor] = useState<string>("");
   const [selectedSection, setSelectedSection] = useState<Section>("Predefined");
 
-  const setColor = (color: string) => {
+  //dispatch
+  const dispatch = useDispatch();
+
+
+  const handleColor = (color: string) => {
     setSelectedColor(color);
-    console.log(color);
+    dispatch(setColor(color))
   };
 
   return (
@@ -52,10 +53,10 @@ const Step2: React.FC<Props> = ({ back, next }) => {
           {selectedSection === "Predefined" ? (
             <ColorSelection
               selectedColor={selectedColor}
-              setSelectedColor={setColor}
+              setSelectedColor={handleColor}
             />
           ) : (
-            <ColorPicker setSelectedColor={setColor} />
+            <ColorPicker setSelectedColor={handleColor} />
           )}
         </div>
       </div>
