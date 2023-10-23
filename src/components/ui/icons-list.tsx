@@ -16,13 +16,13 @@ const IconsList: React.FC<Props> = ({ setSelectedIcon, selectedIcon }) => {
           onClick={() => setSelectedIcon(icon)}
           className="transition-transform transform scale-100 hover:scale-105 focus:scale-95 active:scale-100 cursor-pointer drop-shadow-2xl flex flex-col items-center px-2 w-24 md:w-28 h-28"
           style={{
-            opacity: icon === selectedIcon ? 1 : 0.75,
+            opacity: icon.style === selectedIcon?.style ? 1 : 0.75,
           }}
         >
           <div
             style={{
               border:
-                icon === selectedIcon
+                icon.style === selectedIcon?.style
                   ? "4px solid white"
                   : "4px solid transparent",
             }}

@@ -6,12 +6,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { setNumberIcons } from "@/app/containers/form-reducer";
 
 interface Props {}
 
 const Step4: React.FC<Props> = () => {
-  const [valueSelector, setValueSelector] = useState<any>();
+  const [valueSelector, setValueSelector] = useState<string>("");
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setNumberIcons(valueSelector));
+  }, [valueSelector, dispatch]);
 
   return (
     <div className="w-full h-full flex flex-col justify-between">

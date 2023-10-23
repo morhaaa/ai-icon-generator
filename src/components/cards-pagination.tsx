@@ -30,7 +30,7 @@ const CardsPagination: React.FC<Props> = ({}) => {
   );
   useEffect(() => {
     setCurrentPage(1);
-  }, [icons]);
+  }, []);
 
   return (
     <div className="h-full w-full flex flex-col overflow-hidden">
