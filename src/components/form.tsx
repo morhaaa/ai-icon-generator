@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { StoreType } from "@/app/containers/store";
+import { StoreType } from "@/containers/store";
 import { useSelector } from "react-redux";
 import Step1 from "@/components/steps/step1";
 import Step2 from "@/components/steps/step2";
@@ -8,7 +8,7 @@ import Step3 from "@/components/steps/step3";
 import Step4 from "@/components/steps/step4";
 import Button from "@/components/ui/button";
 import { BiRightArrowAlt } from "react-icons/bi";
-import { resetForm } from "@/app/containers/form-reducer";
+import { resetForm } from "@/containers/form-reducer";
 
 interface Props {}
 

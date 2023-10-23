@@ -5,7 +5,7 @@ import clsx from "clsx";
 import ColorSelection from "../ui/color-list";
 import ColorPicker from "../ui/color-picker";
 import { useDispatch } from "react-redux";
-import { setColor } from "@/app/containers/form-reducer";
+import { setColor } from "@/containers/form-reducer";
 
 type Section = "Predefined" | "Picker";
 
@@ -18,10 +18,9 @@ const Step2: React.FC = () => {
   //dispatch
   const dispatch = useDispatch();
 
-
   const handleColor = (color: string) => {
     setSelectedColor(color);
-    dispatch(setColor(color))
+    dispatch(setColor(color));
   };
 
   return (

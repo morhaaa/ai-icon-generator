@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Icon } from "@/utilities/constant";
 import IconsList from "../ui/icons-list";
 import { useDispatch } from "react-redux";
-import { setIconStyle } from "@/app/containers/form-reducer";
+import { setIconStyle } from "@/containers/form-reducer";
 
 interface Props {}
 

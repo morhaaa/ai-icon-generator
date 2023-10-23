@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/select";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { setNumberIcons } from "@/app/containers/form-reducer";
+import { setNumberIcons } from "@/containers/form-reducer";
 
 interface Props {}
 

@@ -1,4 +1,4 @@
-import { resetForm, setInputText } from "@/app/containers/form-reducer";
+import { resetForm, setInputText } from "@/containers/form-reducer";
 import InputGenerator from "@/components/ui/input";
 import {
   Tooltip,
@@ -11,11 +11,10 @@ import { useDispatch } from "react-redux";
 
 interface Props {}
 const Step1: React.FC<Props> = () => {
-
   const dispatch = useDispatch();
- 
+
   const handleInput = (txt: string): void => {
-    dispatch(setInputText(txt))
+    dispatch(setInputText(txt));
   };
 
   return (
