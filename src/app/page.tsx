@@ -1,9 +1,15 @@
 import LandingHero from "@/components/landing-hero";
+import Footer from "@/components/footer";
+import JoinUs from "@/components/join-us";
 
 export default function Home() {
   return (
-    <main className="h-full w-[85%] md:w-[80%] lg:w-[85%] flex flex-col items-center">
-      <LandingHero />
+    <main className="w-full flex items-center justify-center">
+      <main className="w-[70%] flex flex-col">
+        <LandingHero />
+        <JoinUs />
+        <Footer />
+      </main>
     </main>
   );
 }
