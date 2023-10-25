@@ -14,6 +14,13 @@ export const colorList = [
   "#4682B4", // Steel Blue
 ];
 
+export const colorListHome = [
+  "#FFD700", // Yellow
+  "#FF1493", // Pink
+  "#00FF00", // Green
+  "#00FFFF", // Cyan
+];
+
 export interface Icon {
   img: string;
   style: string;

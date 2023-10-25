@@ -1,3 +1,4 @@
+"use client";
 import clsx from "clsx";
 import { useState } from "react";
 
@@ -62,10 +63,13 @@ const InputGenerator: React.FC<Props> = ({
         <button
           type="button"
           onClick={onClick}
-          className={clsx("text-white bg-gray-800 border rounded-lg", {
-            "text-xl md:text-xl py-2 px-6": size === "medium",
-            "py-1 px-4": size === "small",
-          })}
+          className={clsx(
+            "text-white bg-gray-900 border border-slate-600 rounded-lg",
+            {
+              "text-xl md:text-xl py-2 px-6": size === "medium",
+              "py-1 px-4": size === "small",
+            }
+          )}
         >
           {textButton}
         </button>
