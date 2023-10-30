@@ -1,6 +1,14 @@
 import NeonBorder from "./neon-border";
 import InputGenerator from "./ui/input";
-import { colorListHome } from "@/utilities/constant";
+import { colorListHome, iconsHome, imagesOptions} from "@/utilities/constant";
+import Image from "next/image";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const Tutorial: React.FC = () => {
   return (
@@ -58,6 +66,72 @@ const Tutorial: React.FC = () => {
           <p className=" text-lg">
             In this step, choose the color for your icon. Pick the color that
             best matches your vision for the icon
+          </p>
+        </div>
+      </div>
+
+      {/* Step 3*/}
+       <div className="text-white flex items-center gap-10 px-10 py-10">
+       <div className="basis-1/2  border-l-4  border-slate-50 pl-10 text-left">
+          <h4 className=" text-3xl font-bold">Step 3: Select a style</h4>
+          <p className=" text-lg">
+            Here you can choose the style for your icon. We offer a variety of options for your needs
+          </p>
+        </div>
+        <div className="basis-1/2 flex items-center justify-center">
+          <NeonBorder>
+            <div className="p-4 flex  gap-4">
+              {iconsHome.map((icon, index) => (
+                <div
+                key={index}
+                className="transition-transform transform scale-100 hover:scale-105 focus:scale-95 active:scale-100 cursor-pointer drop-shadow-2xl flex flex-col items-center px-2 w-24 md:w-28 h-28"
+                >
+                  <div
+                    className= "4px solid white"
+                  >
+                    <Image
+                      height={90}
+                      width={90}
+                      src="/assets/draft.png"
+                      alt={icon.style}
+                    />
+                  </div>
+                  <p className="text-white text-xs md:text-sm lg:text-sm">
+                    {icon.style}
+                  </p>
+                </div>
+                ))}
+            </div>
+          </NeonBorder>
+        </div>
+      </div>
+
+      {/* Step 4*/}
+      <div className="text-white flex items-center gap-10 px-10 py-10">
+        <div className="basis-1/2 flex items-center justify-center">
+          <NeonBorder>
+          <Select>
+            <SelectTrigger className=" w-full md:w-[500px]  bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 border border-slate-700 drop-shadow-2xl shadow-xl  text-white text-base">
+              <SelectValue placeholder="Select" />
+            </SelectTrigger>
+            <SelectContent className="   bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 border  border-slate-700  drop-shadow-2xl shadow-xl  text-white ">
+              {imagesOptions.map((value, index) => (
+                <SelectItem
+                  value={value.toString()}
+                  className="flex flex-row text-base"
+                  key={index}
+                >
+                  {value}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          </NeonBorder>
+        </div>
+        <div className="basis-1/2  border-r-4  border-slate-50 pr-10 text-right">
+          <h4 className=" text-3xl font-bold">Step 4: Choose number for your icons</h4>
+          <p className=" text-lg">
+           Finally, you specify the number of icons you want to generate. Whether you need a single icon or a set of multiple icons
           </p>
         </div>
       </div>

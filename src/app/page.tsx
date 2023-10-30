@@ -1,7 +1,6 @@
 import LandingHero from "@/components/landing-hero";
 import Footer from "@/components/footer";
 import JoinUs from "@/components/join-us";
-import OurCommunity from "@/components/our-community";
 import Tutorial from "@/components/tutorial";
 
 export default function Home() {
@@ -11,7 +10,6 @@ export default function Home() {
         <LandingHero />
         <Tutorial />
         <JoinUs />
-        <OurCommunity />
       </main>
       <Footer />
     </main>

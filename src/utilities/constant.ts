@@ -53,4 +53,12 @@ export const icons: Icon[] = [
   { img: "", style: "Woodcut" },
 ];
 
+
+export const iconsHome: Icon[] = [
+  { img: "", style: "Metallic" },
+  { img: "", style: "Polygon" },
+  { img: "", style: "Pixelated" },
+  { img: "", style: "Clay" },
+  { img: "", style: "Gradient" },
+];
 export const imagesOptions = [1, 2, 3, 4, 5, 6, 7, 8];
