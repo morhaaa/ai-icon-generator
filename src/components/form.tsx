@@ -12,8 +12,6 @@ import { resetForm } from "@/containers/form-reducer";
 
 interface Props {}
 
-const back = () => {};
-const next = () => {};
 const steps = [
   { id: 1, tag: <Step1 /> },
   { id: 2, tag: <Step2 /> },
@@ -39,22 +37,43 @@ const Form: React.FC<Props> = ({}) => {
     setFormIsFulfilled(!!inputText && !!color && !!iconStyle && !!numberIcons);
   }, [inputText, color, iconStyle, numberIcons]);
 
+  const sendRequest = async () => {
+    const req = {
+      prompt: inputText,
+      color: color,
+      style: iconStyle,
+      n: numberIcons,
+    };
+
+    const response = await fetch("/api/openAi", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(req),
+    });
+
+    const images = await response.json();
+    console.log(response);
+  };
+
   return (
-    <>
+    <div className="py-4 flex flex-col">
+      <p className="text-white font-semibold text-5xl text-center border-b pb-6 border-slate-600">
+        Let's generate your icons
+      </p>
       {steps.map((step, index) => (
         <div key={index} className="border-b border-slate-600 py-8 lg:py-10 ">
           {step.tag}
         </div>
       ))}
       <div className="flex justify-end items-center gap-4 py-8">
-        <Button onClick={next}>
+        <Button onClick={sendRequest}>
           <div className="flex items-center justify-center gap-2 lg:px-2 lg:py-1">
             <p className="text-lg lg:text-xl">Confirm</p>
             <BiRightArrowAlt />
           </div>
         </Button>
       </div>
-    </>
+    </div>
   );
 };
 

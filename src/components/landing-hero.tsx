@@ -1,45 +1,73 @@
-import Image from "next/image";
+"use client";
+
 import Button from "./ui/button";
 import NeonBorder from "./neon-border";
+import Image from "next/image";
+import { signIn } from "next-auth/react";
+import { useSelector } from "react-redux";
+import { StoreType } from "@/containers/store";
+import { useRouter } from "next/navigation";
 
 export default function LandingHero() {
+  //router
+  const router = useRouter();
+
+  //redux
+  const user = useSelector((store: StoreType) => store.user.value);
+
+  const startGeneration = () => {
+    user === null
+      ? signIn("google", { callbackUrl: "/generator" })
+      : router.push("/generator");
+  };
+
   return (
-    <section className="w-full h-[95vh] flex flex-col gap-8 items-center justify-center pb-10 ">
-      {/*title*/}
-      <div className="flex flex-col justify-center items-center text-white pt-20">
-        <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold">
-          Create{" "}
-          <span className="text-transparent text-8xl bg-clip-text bg-gradient-to-br from-fuchsia-300 to-fuchsia-500">
-            Stunning
-          </span>{" "}
-          icons with
-        </h1>
-        <h2 className="text-5xl md:text-6xl lg:text-8xl font-bold">
-          <span className="text-transparent text-8xl bg-clip-text bg-gradient-to-br from-fuchsia-300 to-fuchsia-500">
-            AI-powered
-          </span>{" "}
-          icon generator
-        </h2>
-      </div>
-      {/*subtitle*/}
-      <div>
-        <p className="text-white text-xl text-center">
-          Create stunning icons effortlessly with our AI-powered icon generator.
-          Streamline your design process and access a vast library of
-          high-quality icons tailored to your unique vision.
-        </p>
+    <section className="w-full h-full flex flex-col gap-10 md:gap-6 xl:gap-4 items-center justify-center pb-6 ">
+      <div className="flex flex-col gap-4 pt-10 px-4">
+        {/*title*/}
+        <div className=" text-5xl md:text-6xl lg:text-7xl xl:text-8xl flex flex-col justify-center items-center text-white ">
+          <h1 className="font-bold text-center">
+            Create{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-fuchsia-300 to-fuchsia-500">
+              Stunning
+            </span>{" "}
+            icons with
+          </h1>
+          <h2 className="font-bold text-center">
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-fuchsia-300 to-fuchsia-500">
+              AI-powered
+            </span>{" "}
+            icon generator
+          </h2>
+        </div>
+        {/*subtitle*/}
+        <div className="flex items-center">
+          <span className="text-xs sm:text-sm md:text-lg lg:text-xl xl:text-2xl text-center text-slate-400">
+            Create stunning icons effortlessly with our AI-powered icon
+            generator.
+            <br />
+            Streamline your design process and access a vast library of
+            high-quality icons tailored to your unique vision.
+          </span>
+        </div>
       </div>
 
-      <div className="w-full flex-1 relative">
-        <div className="h-full w-full flex items-center justify-center relative">
-          <div className="h-[30rem] w-[28rem] absolute rounded-2xl bg-blue-600 z-10"></div>
-          <div className="h-[22rem] w-[20rem] absolute rounded-2xl bg-violet-600 left-[26%] opacity-60"></div>
-          <div className="h-[22rem] w-[20rem] absolute rounded-2xl bg-red-200 right-[26%] opacity-60"></div>
+      <div className="w-full flex-1  flex  items-center  justify-center relative">
+        <div className="h-[24rem] w-[24rem] sm:h-[30rem] sm:w-[30rem] md:h-[30rem] md:w-[45rem] lg:h-[35rem] lg:w-[65rem] xl:h-[38rem] xl:w-[65rem] relative ">
+          <Image
+            src="/assets/landing_heto.png"
+            alt="pic2"
+            fill
+            className="rounded-2xl"
+          />
         </div>
-        <div className="absolute bottom-0 w-full flex items-center justify-center z-50">
+        <div className="absolute bottom-4 w-full flex items-center justify-center z-50">
           <NeonBorder>
-            <Button>
-              <p className="text-3xl p-3"> Start Generation</p>
+            <Button onClick={startGeneration}>
+              <p className="text-lg xl:text-3xl p-2 xl:p-3">
+                {" "}
+                Start Generation
+              </p>
             </Button>
           </NeonBorder>
         </div>

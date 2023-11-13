@@ -1,6 +1,6 @@
 import NeonBorder from "./neon-border";
 import InputGenerator from "./ui/input";
-import { colorListHome, iconsHome, imagesOptions} from "@/utilities/constant";
+import { colorListHome, iconsHome, imagesOptions } from "@/utilities/constant";
 import Image from "next/image";
 import {
   Select,
@@ -12,8 +12,8 @@ import {
 
 const Tutorial: React.FC = () => {
   return (
-    <section className="w-full h-full flex flex-col gap-6 py-20 px-10 bg-gradient-to-b from-transparent via-black/30 to-black/80 ">
-      <div className="flex flex-col justify-center items-center text-white pt-20 text-7xl ">
+    <section className="w-full h-full flex flex-col gap-6 xl:gap-16 py-20 px-6 lg:px-8 xl:px-14 bg-gradient-to-b from-transparent via-black/30 to-black/80 ">
+      <div className="flex flex-col justify-center items-center text-white text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-center ">
         <h1 className=" font-bold">
           How does it{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-fuchsia-300 to-fuchsia-500">
@@ -22,10 +22,12 @@ const Tutorial: React.FC = () => {
         </h1>
       </div>
       {/* Step 1*/}
-      <div className="text-white flex items-center gap-10 px-10 py-10">
-        <div className="basis-1/2 border-l-4  border-slate-50 pl-10">
-          <h4 className=" text-3xl font-bold">Step 1: Enter a prompt</h4>
-          <p className=" text-slate-400 py-2 text-lg">
+      <div className="text-white flex flex-col border-l-4  md:flex-row items-center gap-10 px-6 md:px-6 xl:px-10 py-6">
+        <div className="basis-1/2  border-slate-50 ">
+          <h4 className="text-xl md:text-2xl lg:text-2xl xl:text-3xl font-bold">
+            Step 1: Enter a prompt
+          </h4>
+          <p className=" text-slate-400 py-2 text-sm md:text-base lg:text-lg xl:text-lg">
             The first step in generating an icon is entering a prompt. A prompt
             is a short description or context that helps us understand the icon
             you want to create.
@@ -33,7 +35,7 @@ const Tutorial: React.FC = () => {
         </div>
         <div className="basis-1/2 flex justify-center">
           <NeonBorder>
-            <div className="w-[45rem]">
+            <div className="xl:w-[45rem]">
               <InputGenerator
                 size="medium"
                 placeholder="Enter your prompt"
@@ -44,7 +46,7 @@ const Tutorial: React.FC = () => {
         </div>
       </div>
       {/* Step 2*/}
-      <div className="text-white flex items-center gap-10 px-10 py-10">
+      <div className="text-white flex items-center gap-10 flex-col-reverse  md:flex-row border-r-4  px-6 md:px-6 xl:px-10 py-6">
         <div className="basis-1/2 flex items-center justify-center">
           <NeonBorder>
             <div className="p-4 flex  gap-4">
@@ -61,9 +63,11 @@ const Tutorial: React.FC = () => {
             </div>
           </NeonBorder>
         </div>
-        <div className="basis-1/2  border-r-4  border-slate-50 pr-10 text-right">
-          <h4 className=" text-3xl font-bold">Step 2: Select a color</h4>
-          <p className="  text-slate-400 py-2 text-lg">
+        <div className="basis-1/2  border-slate-50  text-right">
+          <h4 className="text-xl md:text-2xl lg:text-2xl xl:text-3xl font-bold">
+            Step 2: Select a color
+          </h4>
+          <p className="  text-slate-400 py-2 text-sm md:text-base lg:text-lg">
             In this step, choose the color for your icon. Pick the color that
             best matches your vision for the icon
           </p>
@@ -71,67 +75,66 @@ const Tutorial: React.FC = () => {
       </div>
 
       {/* Step 3*/}
-       <div className="text-white flex items-center gap-10 px-10 py-10">
-       <div className="basis-1/2  border-l-4  border-slate-50 pl-10 text-left">
-          <h4 className=" text-3xl font-bold">Step 3: Select a style</h4>
-          <p className="  text-slate-400 py-2  text-lg">
-            Here you can choose the style for your icon. We offer a variety of options for your needs
+      <div className="text-white flex  gap-10 flex-col  md:flex-row border-l-4 px-6 md:px-6 xl:px-10 py-6">
+        <div className="basis-1/2 border-slate-50 text-left">
+          <h4 className="text-xl md:text-2xl lg:text-2xl xl:text-3xl font-bold">
+            Step 3: Select a style
+          </h4>
+          <p className="  text-slate-400 py-2  text-sm md:text-base lg:text-lg">
+            Here you can choose the style for your icon. We offer a variety of
+            options for your needs
           </p>
         </div>
         <div className="basis-1/2 flex items-center justify-center">
           <NeonBorder>
-            <div className="p-4 flex  gap-4">
+            <div className="p-2 md:p-4 flex gap-2 md:gap-4">
               {iconsHome.map((icon, index) => (
                 <div
-                key={index}
-                className="transition-transform transform scale-100 hover:scale-105 focus:scale-95 active:scale-100 cursor-pointer drop-shadow-2xl flex flex-col items-center px-2 w-24 md:w-28 h-28"
+                  key={index}
+                  className="transition-transform transform scale-100 hover:scale-105 focus:scale-95 active:scale-100 cursor-pointer drop-shadow-2xl flex flex-col items-center"
                 >
-                  <div
-                    className= "4px solid white"
-                  >
-                    <Image
-                      height={90}
-                      width={90}
-                      src="/assets/draft.png"
-                      alt={icon.style}
-                    />
+                  <div className="w-10 h-10 md:h-14 md:w-14 xl:w-24 xl:h-24 relative">
+                    <Image fill src="/assets/draft.png" alt={icon.style} />
                   </div>
-                  <p className="text-white text-xs md:text-sm lg:text-sm">
+                  <p className="text-white text-xs md:text-sm lg:text-sm xl:text-base">
                     {icon.style}
                   </p>
                 </div>
-                ))}
+              ))}
             </div>
           </NeonBorder>
         </div>
       </div>
 
       {/* Step 4*/}
-      <div className="text-white flex items-center gap-10 px-10 py-10">
+      <div className="text-white flex items-center gap-10  flex-col-reverse  md:flex-row border-r-4 px-6 md:px-6 xl:px-10 py-6">
         <div className="basis-1/2 flex items-center justify-center">
           <NeonBorder>
-          <Select>
-            <SelectTrigger className=" w-full md:w-[500px]  bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 border border-slate-700 drop-shadow-2xl shadow-xl  text-white text-base">
-              <SelectValue placeholder="Select" />
-            </SelectTrigger>
-            <SelectContent className="   bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 border  border-slate-700  drop-shadow-2xl shadow-xl  text-white ">
-              {imagesOptions.map((value, index) => (
-                <SelectItem
-                  value={value.toString()}
-                  className="flex flex-row text-base"
-                  key={index}
-                >
-                  {value}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+            <Select>
+              <SelectTrigger className="w-[250px] md:w-[270px] lg:w-[300px] xl:w-[500px]  bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 border border-slate-700 drop-shadow-2xl shadow-xl  text-white text-base">
+                <SelectValue placeholder="Select" />
+              </SelectTrigger>
+              <SelectContent className="   bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 border  border-slate-700  drop-shadow-2xl shadow-xl  text-white ">
+                {imagesOptions.map((value, index) => (
+                  <SelectItem
+                    value={value.toString()}
+                    className="flex flex-row text-base"
+                    key={index}
+                  >
+                    {value}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </NeonBorder>
         </div>
-        <div className="basis-1/2  border-r-4  border-slate-50 pr-10 text-right">
-          <h4 className=" text-3xl font-bold">Step 4: Choose number for your icons</h4>
-          <p className="  text-slate-400 py-2  text-lg">
-           Finally, you specify the number of icons you want to generate. Whether you need a single icon or a set of multiple icons
+        <div className="basis-1/2   border-slate-50  text-right">
+          <h4 className=" text-xl md:text-2xl lg:text-2xl xl:text-3xl font-bold">
+            Step 4: Choose number for your icons
+          </h4>
+          <p className="  text-slate-400 py-2 text-sm md:text-base lg:text-lg">
+            Finally, you specify the number of icons you want to generate.
+            Whether you need a single icon or a set of multiple icons
           </p>
         </div>
       </div>
