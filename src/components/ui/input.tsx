@@ -66,7 +66,7 @@ const InputGenerator: React.FC<Props> = ({
           className={clsx(
             "text-white bg-gray-900 border border-slate-600 rounded-lg",
             {
-              "text-xl md:text-xl py-2 px-6": size === "medium",
+              "text-lg lg:text-xl py-1 px-4 lg:py-2 lg:px-6": size === "medium",
               "py-1 px-4": size === "small",
             }
           )}
