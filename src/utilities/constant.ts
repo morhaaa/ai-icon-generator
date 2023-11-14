@@ -53,7 +53,6 @@ export const icons: Icon[] = [
   { img: "", style: "Woodcut" },
 ];
 
-
 export const iconsHome: Icon[] = [
   { img: "", style: "Metallic" },
   { img: "", style: "Polygon" },
@@ -62,3 +61,9 @@ export const iconsHome: Icon[] = [
   { img: "", style: "Gradient" },
 ];
 export const imagesOptions = [1, 2, 3, 4, 5, 6, 7, 8];
+
+export const plans = [
+  { price: 5, credits: 50, description: "Basic Pack" },
+  { price: 9, credits: 100, description: "Premium Pack" },
+  { price: 20, credits: 250, description: "Diamond Pack" },
+];
