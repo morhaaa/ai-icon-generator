@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 
 const basePATH = process.env.NEXTAUTH_URL ?? "";
 
-export const authOptions = {
+const authOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID ?? "",
