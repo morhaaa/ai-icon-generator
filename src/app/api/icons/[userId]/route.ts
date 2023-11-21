@@ -3,11 +3,11 @@ import { connect } from "@/utilities/db";
 import { NextResponse, NextRequest } from "next/server";
 
 interface Params {
-  params: { email: string };
+  params: { userId: string };
 }
 
 export async function GET(request: NextRequest, params: Params) {
-  const author = params.params.email;
+  const authorId = params.params.userId;
   const searchParams = request.nextUrl.searchParams;
   const generationId = searchParams.get("generationId");
 
@@ -16,16 +16,16 @@ export async function GET(request: NextRequest, params: Params) {
   try {
     const iconsData = generationId
       ? await Icon.find({
-          author: author,
+          authorId: authorId,
           generationId: generationId,
         })
       : await Icon.find({
-          author,
+          authorId,
         });
 
     if (iconsData) {
       const icons: Icon[] = iconsData.map((icon) => ({
-        author: icon.author,
+        authorId: icon.authorId,
         image: icon.image,
         prompt: icon.prompt,
         generationId: icon.generationId,
@@ -38,7 +38,7 @@ export async function GET(request: NextRequest, params: Params) {
         status: 200,
       });
     } else {
-      return new NextResponse("icons not found", { status: 404 });
+      return NextResponse.json({ message: "icons not found", status: 404 });
     }
   } catch (e: any) {
     return NextResponse.json({ message: e, success: false });
