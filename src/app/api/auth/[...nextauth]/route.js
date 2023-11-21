@@ -1,5 +1,8 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+import User from "@/model/user";
+import { connect } from "@/utilities/db";
+import { NextResponse } from "next/server";
 
 const basePATH = process.env.NEXTAUTH_URL ?? "";
 
@@ -25,18 +28,37 @@ export const authOptions = {
         const { name, email } = user;
 
         try {
-          await fetch(`${basePATH}/api/createUser`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ email, name }),
-          });
+          await connect();
 
-          return true;
+          const existingUser = await User.findOne({ email });
+
+          if (!existingUser) {
+            const userCreated = await User.create({
+              email: email,
+              name: name,
+              balance: 1,
+            });
+
+            console.log(userCreated);
+
+            return NextResponse.json({
+              message: "User created",
+              status: 200,
+              success: true,
+            });
+          } else {
+            return NextResponse.json({
+              message: "User already exists",
+              status: 200,
+              success: true,
+            });
+          }
         } catch (e) {
-          console.log(e);
-          return false;
+          console.error("Error:", e);
+          return NextResponse.json({
+            message: "Internal Server Error",
+            success: false,
+          });
         }
       }
     },
