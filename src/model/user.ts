@@ -1,10 +1,11 @@
+import { UUID } from "mongodb";
 import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 const userSchema = new Schema({
   email: { type: String, unique: true, required: true, timestamps: true },
   name: { type: String, required: true, timestamps: true },
-  balance: { type: String, required: true, timestamps: true },
+  balance: { type: Number, required: true, timestamps: true },
 });
 
 const User = mongoose.models.User || mongoose.model("User", userSchema);

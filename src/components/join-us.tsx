@@ -24,7 +24,7 @@ const JoinUs: React.FC = () => {
           <p className="font-extrabold text-transparent  text-5xl md:text-6xl lg:text-7xl xl:text-8xl bg-clip-text  bg-gradient-to-br from-fuchsia-300 to-fuchsia-500">
             2300
           </p>
-          <p className="text-white text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+          <p className="font-medium text-white text-4xl md:text-5xl lg:text-5xl xl:text-7xl">
             Users
           </p>
         </div>
@@ -33,7 +33,9 @@ const JoinUs: React.FC = () => {
           <p className="font-extrabold text-transparent text-5xl md:text-6xl lg:text-7xl xl:text-8xl  bg-clip-text bg-gradient-to-br from-fuchsia-300 to-fuchsia-500">
             2500
           </p>
-          <p className="text-white text-4xl">Icons Generated</p>
+          <p className="text-white font-medium  text-4xl md:text-5xl lg:text-5xl xl:text-7xl">
+            Icons
+          </p>
         </div>
       </div>
       <div className="py-4">

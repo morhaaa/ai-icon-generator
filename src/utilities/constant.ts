@@ -63,7 +63,7 @@ export const iconsHome: Icon[] = [
 export const imagesOptions = [1, 2, 3, 4, 5, 6, 7, 8];
 
 export const plans = [
-  { price: 5, credits: 50, description: "Basic Pack" },
-  { price: 9, credits: 100, description: "Premium Pack" },
-  { price: 20, credits: 250, description: "Diamond Pack" },
+  { price: 5, credits: 50, description: "0.10$ per image" },
+  { price: 9, credits: 100, description: "0.10$ per image" },
+  { price: 20, credits: 250, description: "0.10$ per image" },
 ];

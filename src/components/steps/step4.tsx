@@ -10,9 +10,11 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setNumberIcons } from "@/containers/form-reducer";
 
-interface Props {}
+interface Props {
+  creditsLeft: number;
+}
 
-const Step4: React.FC<Props> = () => {
+const Step4: React.FC<Props> = ({ creditsLeft }) => {
   const [valueSelector, setValueSelector] = useState<string>("");
 
   const dispatch = useDispatch();
@@ -58,7 +60,7 @@ const Step4: React.FC<Props> = () => {
             <h3 className="text-white">Credits left:</h3>
             <h3 className="text-green-500  text-xs font-bold h-5 w-5 border-2 border-green-500 rounded-full flex items-center justify-center">
               {" "}
-              1
+              {creditsLeft}
             </h3>
             <h3 className="text-slate-400 px-2 md:px-4 underline underline-offset-2 cursor-pointer">
               {" "}
