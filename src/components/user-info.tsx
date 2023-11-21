@@ -33,8 +33,8 @@ const UserInfo: React.FC<Props> = ({ user, logOut, image }) => {
         <Image
           src={image}
           alt="user photo"
-          width={50}
-          height={50}
+          width={40}
+          height={40}
           className="rounded-full cursor-pointer shadow-xl"
         />
       </DropdownMenuTrigger>

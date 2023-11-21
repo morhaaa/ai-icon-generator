@@ -25,7 +25,7 @@ export default function LandingHero() {
     <section className="w-full h-full flex flex-col gap-10 md:gap-6 xl:gap-4 items-center justify-center pb-6 ">
       <div className="flex flex-col gap-4 pt-10 px-4">
         {/*title*/}
-        <div className=" text-5xl md:text-6xl lg:text-7xl xl:text-8xl flex flex-col justify-center items-center text-white ">
+        <div className=" text-3xl md:text-4xl lg:text-5xl xl:text-6xl flex flex-col justify-center items-center text-white ">
           <h1 className="font-bold text-center">
             Create{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-fuchsia-300 to-fuchsia-500">
@@ -42,7 +42,7 @@ export default function LandingHero() {
         </div>
         {/*subtitle*/}
         <div className="flex items-center">
-          <span className="text-xs sm:text-sm md:text-lg lg:text-xl xl:text-2xl text-center text-slate-400">
+          <span className="text-xs sm:text-sm xl:text-lg text-center text-slate-400">
             Create stunning icons effortlessly with our AI-powered icon
             generator.
             <br />

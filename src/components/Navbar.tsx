@@ -31,10 +31,10 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="w-full flex justify-between items-center px-5 py-3 shadow-2xl">
+    <nav className="w-full flex justify-between items-center px-5 py-2 shadow-2xl">
       <div className={monserrat.className}>
         <Link href="/">
-          <p className="font-semibold text-white text-2xl cursor-pointer">
+          <p className="font-semibold text-white text-xl cursor-pointer">
             AIconGenerator
           </p>
         </Link>
