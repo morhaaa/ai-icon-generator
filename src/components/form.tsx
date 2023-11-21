@@ -78,7 +78,7 @@ const Form: React.FC<Props> = ({}) => {
   return (
     <div className="py-6 flex flex-col">
       <p className="text-white font-semibold text-5xl text-center border-b pb-6 border-slate-600">
-        Let's generate your icons
+        Let&apos;s generate your icons
       </p>
       {steps.map((step, index) => (
         <div key={index} className="border-b border-slate-600 py-8 lg:py-10 ">

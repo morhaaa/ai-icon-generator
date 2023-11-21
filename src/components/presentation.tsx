@@ -39,9 +39,10 @@ const Presentation: React.FC = () => {
           </span>
         </h1>
         <span className="text-xs sm:text-sm md:text-lg lg:text-xl xl:text-2xl  text-center text-slate-400">
-          Let's be honest, you don't have the time or money to find a designer,
-          communicate back <br /> and forth via email, and refine your icon over
-          and over again. Letting AI generate your icon provides many benefits.
+          Let&apos;s be honest, you don&apos;t have the time or money to find a
+          designer, communicate back <br /> and forth via email, and refine your
+          icon over and over again. Letting AI generate your icon provides many
+          benefits.
         </span>
       </div>
       <div className="flex gap-4 md:gap-10 flex-wrap justify-center">
