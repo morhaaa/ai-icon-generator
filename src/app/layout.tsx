@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import type { Metadata } from "next";
 import Providers from "../containers/providers";
@@ -28,6 +29,7 @@ export default function RootLayout({
             inter.className
           )}
         >
+          <Analytics />
           <Toaster />
           <Navbar />
           <Modal />
