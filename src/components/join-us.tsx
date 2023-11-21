@@ -1,7 +1,24 @@
+"use client";
 import Button from "./ui/button";
 import NeonBorder from "./neon-border";
+import { useSelector } from "react-redux";
+import { StoreType } from "@/containers/store";
+import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 
 const JoinUs: React.FC = () => {
+  //router
+  const router = useRouter();
+
+  //redux
+  const user = useSelector((store: StoreType) => store.user.value);
+
+  const startGeneration = () => {
+    user === null
+      ? signIn("google", { callbackUrl: "/generator" })
+      : router.push("/generator");
+  };
+
   return (
     <section className="w-full flex flex-col items-center justify-center pb-28 pt-10 gap-24 bg-black/80">
       <div className="flex flex-col justify-center gap-4 items-center text-white text-5xl md:text-6xl lg:text-7xl xl:text-8xl ">
@@ -40,7 +57,7 @@ const JoinUs: React.FC = () => {
       </div>
       <div className="py-4">
         <NeonBorder>
-          <Button>
+          <Button onClick={startGeneration}>
             <p className="text-3xl p-3"> Start Now!</p>
           </Button>
         </NeonBorder>

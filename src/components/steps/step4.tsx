@@ -9,6 +9,7 @@ import {
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setNumberIcons } from "@/containers/form-reducer";
+import { openModal } from "@/containers/modal-credit";
 
 interface Props {
   creditsLeft: number;
@@ -62,7 +63,10 @@ const Step4: React.FC<Props> = ({ creditsLeft }) => {
               {" "}
               {creditsLeft}
             </h3>
-            <h3 className="text-slate-400 px-2 md:px-4 underline underline-offset-2 cursor-pointer">
+            <h3
+              className="text-slate-400 px-2 md:px-4 underline underline-offset-2 cursor-pointer"
+              onClick={() => dispatch(openModal())}
+            >
               {" "}
               Need more credits?
             </h3>

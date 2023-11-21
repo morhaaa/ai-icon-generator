@@ -15,7 +15,7 @@ const Button: React.FC<Props> = ({ children, onClick, disabled }) => {
   return (
     <button
       disabled={disabled}
-      className="text-white font-medium text-sm lg:text-lg py-1 px-4  bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 border border-slate-700 rounded-xl whitespace-nowrap drop-shadow-2xl shadow-2xl"
+      className="text-white font-medium text-sm lg:text-lg py-1 px-4  bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 border border-slate-700 rounded-xl whitespace-nowrap drop-shadow-2xl shadow-2xl disabled:text-gray-400"
       onClick={handleClick}
     >
       {children}
