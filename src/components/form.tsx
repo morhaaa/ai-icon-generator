@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { StoreType } from "@/containers/store";
