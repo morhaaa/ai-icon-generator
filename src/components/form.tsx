@@ -77,12 +77,15 @@ const Form: React.FC<Props> = ({}) => {
   ];
 
   return (
-    <div className="py-6 flex flex-col">
-      <p className="text-white font-semibold text-5xl text-center border-b pb-6 border-slate-600">
+    <div className="flex flex-col">
+      <p className="text-white font-semibold text-3xl md:text-3xl lg:text-3xl xl:text-4xl text-center border-b pb-4 md:pb-5 lg:pb-6 border-slate-600">
         Let&apos;s generate your icons
       </p>
       {steps.map((step, index) => (
-        <div key={index} className="border-b border-slate-600 py-8 lg:py-10 ">
+        <div
+          key={index}
+          className="border-b border-slate-600 py-6 md:py-7 lg:py-8"
+        >
           {step.tag}
         </div>
       ))}

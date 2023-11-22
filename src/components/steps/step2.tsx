@@ -24,15 +24,15 @@ const Step2: React.FC = () => {
   };
 
   return (
-    <div className="h-full w-full flex flex-col justify-between gap-4 overflow-hidden">
+    <div className="h-full w-full flex flex-col justify-between gap-2 overflow-hidden">
       {/*title*/}
-      <h2 className="text-white font-medium text-2xl md:text-3xl">
+      <h2 className="text-white font-medium text-lg md:text-xl lg:text-2xl">
         Select a primary color
       </h2>
 
       <div className="flex flex-col gap-2 h-full w-full overflow-hidden">
         {/*navbar*/}
-        <nav className="flex gap-4 px-2">
+        <nav className="flex gap-4 px-2 text-sm md:text-sm lg:text-base">
           {sections.map((section, index) => (
             <h4
               key={index}

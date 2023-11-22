@@ -18,9 +18,9 @@ const Step3: React.FC<Props> = () => {
 
   return (
     <div className="h-full w-full flex flex-col justify-between gap-4 overflow-hidden">
-      <div className="flex flex-col gap-6 w-full h-full overflow-hidden">
+      <div className="flex flex-col gap-4 w-full h-full overflow-hidden">
         {/*title*/}
-        <h2 className="text-white font-medium text-2xl md:text-3xl ">
+        <h2 className="text-white font-medium text-lg md:text-xl lg:text-2xl ">
           Select a style for your icon
         </h2>
 

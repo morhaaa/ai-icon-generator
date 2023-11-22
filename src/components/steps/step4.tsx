@@ -26,14 +26,12 @@ const Step4: React.FC<Props> = ({ creditsLeft }) => {
 
   return (
     <div className="w-full h-full flex flex-col justify-between">
-      <div className="flex flex-col gap-6 justify-start">
+      <div className="flex flex-col gap-4 justify-start">
         <div className="flex flex-col gap-1">
-          <h2 className="text-white font-medium text-2xl md:text-2xl lg:text-4xl ">
+          <h2 className="text-white font-medium text-lg md:text-xl lg:text-2xl ">
             Select number of icons
           </h2>
-          <h3 className="text-sm text-white font-light px-1">
-            1 credit per image
-          </h3>
+          <h3 className="text-sm text-white font-light">1 credit per image</h3>
         </div>
 
         <div className="flex w-full flex-col gap-4  ">
@@ -59,7 +57,7 @@ const Step4: React.FC<Props> = ({ creditsLeft }) => {
           </Select>
           <div className="text-sm  px-1 flex gap-2 md:gap-2 items-center">
             <h3 className="text-white">Credits left:</h3>
-            <h3 className="text-green-500  text-xs font-bold h-5 w-5 border-2 border-green-500 rounded-full flex items-center justify-center">
+            <h3 className="text-green-500  text-xs font-bold h-6 w-6 border-2 border-green-500 rounded-full flex items-center justify-center">
               {" "}
               {creditsLeft}
             </h3>
