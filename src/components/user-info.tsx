@@ -54,7 +54,7 @@ const UserInfo: React.FC<Props> = ({ user, logOut, image }) => {
         <DropdownMenuGroup>
           <DropdownMenuItem
             className="py-2 cursor-pointer"
-            onClick={() => router.push("/generate")}
+            onClick={() => router.push("/generator")}
           >
             <ImagePlus className="mr-2 h-5 w-5" />
             <span className="text-lg px-2">Generate</span>

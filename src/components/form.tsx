@@ -77,8 +77,8 @@ const Form: React.FC<Props> = ({}) => {
   ];
 
   return (
-    <div className="flex flex-col">
-      <p className="text-white font-semibold text-3xl md:text-3xl lg:text-3xl xl:text-4xl text-center border-b pb-4 md:pb-5 lg:pb-6 border-slate-600">
+    <div className="pt-12 pb-28 px-8 md:px-16 lg:px-20 xl:px-24 flex flex-col">
+      <p className="text-white font-semibold text-3xl md:text-3xl lg:text-3xl xl:text-4xl text-center border-b pb-6 lg:pb-8 border-slate-600">
         Let&apos;s generate your icons
       </p>
       {steps.map((step, index) => (
