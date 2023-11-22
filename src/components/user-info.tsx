@@ -1,5 +1,10 @@
 import Image from "next/image";
-import { CreditCard, LogOut, GalleryHorizontalEnd } from "lucide-react";
+import {
+  CreditCard,
+  LogOut,
+  GalleryHorizontalEnd,
+  ImagePlus,
+} from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -38,37 +43,44 @@ const UserInfo: React.FC<Props> = ({ user, logOut, image }) => {
           className="rounded-full cursor-pointer shadow-xl"
         />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-72 rounded-xl border-slate-500 bg-gradient-to-br from-indigo-950 via-indigo-950 to-blue-950  text-white mr-6">
+      <DropdownMenuContent className="w-64 rounded-xl border-slate-500 bg-gradient-to-br from-indigo-950 via-indigo-950 to-blue-950  text-white mr-6">
         <DropdownMenuLabel className=" px-3 py-2 flex flex-col">
-          <p className="text-xl">{truncateString(user.name, 20)}</p>
-          <p className="text-green-500 text-lg font-semibold">
+          <p className="text-lg">{truncateString(user.name, 20)}</p>
+          <p className="text-green-500 font-semibold">
             Balance: {user.balance}
           </p>
         </DropdownMenuLabel>
         <DropdownMenuSeparator className="bg-slate-500" />
         <DropdownMenuGroup>
           <DropdownMenuItem
-            className="py-4 cursor-pointer"
+            className="py-2 cursor-pointer"
+            onClick={() => router.push("/generate")}
+          >
+            <ImagePlus className="mr-2 h-5 w-5" />
+            <span className="text-lg px-2">Generate</span>
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            className="py-2 cursor-pointer"
             onClick={() => router.push("/icons")}
           >
             <GalleryHorizontalEnd className="mr-2 h-5 w-5" />
-            <span className="text-xl px-2">My icons</span>
+            <span className="text-lg px-2">My icons</span>
           </DropdownMenuItem>
           <DropdownMenuItem
-            className="py-4 cursor-pointer"
+            className="py-3 cursor-pointer"
             onClick={openBuyCreditsModal}
           >
             <CreditCard className="mr-2 h-5 w-5" />
-            <span className="text-xl px-2">Buy credits</span>
+            <span className="text-lg px-2">Buy credits</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator className="bg-slate-500" />
         <DropdownMenuItem
-          className="py-4 cursor-pointer"
+          className="py-2 cursor-pointer"
           onClick={() => logOut()}
         >
           <LogOut className="mr-2 h-5 w-5" />
-          <span className="text-xl px-2">Log out</span>
+          <span className="text-lg px-2">Log out</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
