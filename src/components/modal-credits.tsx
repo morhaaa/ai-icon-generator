@@ -43,31 +43,31 @@ const Modal = () => {
     <div className="absolute bg-slate-700/20 backdrop-blur h-screen w-screen z-[9999] flex items-center justify-center">
       <Card
         className={
-          "flex flex-col border-2 border-slate-500 bg-gradient-to-br from-indigo-950 via-indigo-950 to-blue-950 w-[350px] md:w-[500px] lg:w-[600px] h-[500px] md:h-[600px] lg:h-[700px] xl:h-[800px] rounded-2xl drop-shadow-2xl"
+          "flex flex-col border-2 py-2 lg:py-4 border-slate-500 bg-gradient-to-br from-indigo-950 via-indigo-950 to-blue-950 xl:w-[450px] xl:h-[580px] lg:w-[420px] lg:h-[530px] md:w-[400px] md:h-[520px] w-[320px] h-[480px] rounded-2xl drop-shadow-2xl"
         }
       >
-        <CardHeader>
+        <CardHeader className="flex flex-col gap-1">
           <X
             color="#e2e8f0"
             className="self-end cursor-pointer"
             onClick={close}
           />
-          <CardTitle className="text-white text-2xl lg:text-4xl">
+          <CardTitle className="text-white text-2xl lg:text-3xl">
             Buy new credits
           </CardTitle>
           <CardDescription className="lg:text-lg">
             Choose your pack
           </CardDescription>
         </CardHeader>
-        <CardContent className="flex-1 flex">
+        <CardContent className="flex-1 flex py-2 lg:py-4">
           <div className="flex-1 flex flex-col">
-            <div className="flex-1 flex flex-col gap-2 lg:gap-4">
+            <div className="flex-1 flex flex-col gap-2 lg:gap-3">
               {plans.map((plan, index) => (
                 <div
                   onClick={() => setIsSelected(index)}
                   key={index}
                   className={clsx(
-                    "flex items-center space-x-4 rounded-lg border-slate-400 border-2 py-2 lg:py-6 px-4 cursor-pointer",
+                    "flex items-center space-x-4 rounded-lg border-slate-400 border-2 py-2 lg:py-2 px-4 cursor-pointer",
                     isSelected === index
                       ? " bg-gradient-to-br from-slate-400 to-slate-300"
                       : "bg-transparent"
@@ -76,35 +76,35 @@ const Modal = () => {
                   {index === 0 && (
                     <Coins
                       strokeWidth={2.25}
-                      size={35}
+                      size={30}
                       color={isSelected === index ? "#000000" : "#e2e8f0"}
                     />
                   )}
                   {index === 1 && (
                     <GemIcon
                       strokeWidth={2.25}
-                      size={35}
+                      size={30}
                       color={isSelected === index ? "#000000" : "#e2e8f0"}
                     />
                   )}
                   {index === 2 && (
                     <Landmark
                       strokeWidth={2.25}
-                      size={35}
+                      size={30}
                       color={isSelected === index ? "#000000" : "#e2e8f0"}
                     />
                   )}
                   <div className="flex items-center justify-between flex-1">
-                    <div className="flex flex-col gap-1">
+                    <div className="flex flex-col">
                       <p
                         className={clsx(
-                          "font-semibold md:text-xl leading-none",
+                          "font-semibold md:text-lg leading-none",
                           isSelected === index ? "" : "text-slate-200"
                         )}
                       >
                         {plan.credits} credits
                       </p>
-                      <p className="md:text-lg text-muted-foreground">
+                      <p className="text-muted-foreground">
                         {plan.description}
                       </p>
                     </div>
@@ -124,7 +124,7 @@ const Modal = () => {
             </div>
             <button
               onClick={() => setIsSelected(2)}
-              className=" bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 py-2 md:py-4 w-full rounded-md border-2 border-slate-500"
+              className=" bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 py-2  w-full rounded-md border-2 border-slate-500"
             >
               <p className="text-xl md:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-slate-300 to-slate-300">
                 Next
@@ -132,7 +132,6 @@ const Modal = () => {
             </button>
           </div>
         </CardContent>
-        <CardFooter></CardFooter>
       </Card>
     </div>
   );
