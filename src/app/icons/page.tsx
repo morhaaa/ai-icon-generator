@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import clsx from "clsx";
 import Footer from "@/components/footer";
+import Lottie from "lottie-react";
+import Loading from "@/utilities/loading-animation.json";
 
 const Icons: React.FC = () => {
   const searchParams = useSearchParams();
@@ -14,6 +16,7 @@ const Icons: React.FC = () => {
 
   const [icons, setIcons] = useState<Icon[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   //redux
   const user = useSelector((store: StoreType) => store.user.value);
@@ -29,15 +32,21 @@ const Icons: React.FC = () => {
   useEffect(() => {
     if (user?.id) {
       const basePath = `/api/icons/${user.id}`;
-      const pathIncludeGenerationId = `${basePath}?generationId=${generationId}`;
+      const path = generationId
+        ? `${basePath}?generationId=${generationId}`
+        : basePath;
       const fetchIcons = async () => {
-        const res = await fetch(
-          generationId ? pathIncludeGenerationId : basePath
-        );
+        setIsLoading(true);
+        try {
+          const res = await fetch(path);
 
-        const result = await res.json();
-        console.log(result);
-        setIcons(result.data);
+          const result = await res.json();
+          console.log(result);
+          setIcons(result.data);
+        } catch (e) {
+          console.log(e);
+        }
+        setIsLoading(false);
       };
       fetchIcons();
     } else {
@@ -51,8 +60,16 @@ const Icons: React.FC = () => {
         <h2 className="w-full text-white text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-medium pb-2 border-b border-slate-600 ">
           My Icons
         </h2>
-        <div className="flex-1 flex w-full overflow-hidden py-4 ">
-          {paginatedIcons.length > 0 ? (
+        <div className="flex-1 flex w-full overflow-hidden py-4">
+          {isLoading ? (
+            <div className="flex-1 w-full flex items-center justify-center">
+              <Lottie
+                animationData={Loading}
+                loop={true}
+                style={{ height: 100 }}
+              />
+            </div>
+          ) : paginatedIcons.length > 0 ? (
             <CardsPagination icons={paginatedIcons} />
           ) : (
             <div className="flex-1 w-full flex items-center justify-center">
