@@ -6,7 +6,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -14,30 +13,18 @@ import { plans } from "@/utilities/constant";
 import { useState } from "react";
 import clsx from "clsx";
 import { closeModal } from "@/containers/modal-credit";
+import CheckOutButton from "./checkout-button";
 
 const Modal = () => {
   const dispatch = useDispatch();
   const isOpen = useSelector((store: StoreType) => store.modal.value);
-  const [isSelected, setIsSelected] = useState<Number>(1);
+  const [selectedPlan, setSelectedPlan] = useState<Plan>(plans[1]);
 
   if (!isOpen) return;
 
   const close = () => {
     dispatch(closeModal());
   };
-
-  //   const onSubscribe = async () => {
-  //     try {
-
-  //       const response = await axios.get("/api/stripe");
-
-  //       window.location.href = response.data.url;
-  //     } catch (error) {
-  //       toast.error("Something went wrong");
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
 
   return (
     <div className="absolute bg-slate-700/20 backdrop-blur h-screen w-screen z-[9999] flex items-center justify-center">
@@ -64,11 +51,11 @@ const Modal = () => {
             <div className="flex-1 flex flex-col gap-2 lg:gap-3">
               {plans.map((plan, index) => (
                 <div
-                  onClick={() => setIsSelected(index)}
+                  onClick={() => setSelectedPlan(plan)}
                   key={index}
                   className={clsx(
                     "flex items-center space-x-4 rounded-lg border-slate-400 border-2 py-2 lg:py-2 px-4 cursor-pointer",
-                    isSelected === index
+                    selectedPlan.id === plan.id
                       ? " bg-gradient-to-br from-slate-400 to-slate-300"
                       : "bg-transparent"
                   )}
@@ -77,21 +64,27 @@ const Modal = () => {
                     <Coins
                       strokeWidth={2.25}
                       size={30}
-                      color={isSelected === index ? "#000000" : "#e2e8f0"}
+                      color={
+                        selectedPlan.id === plan.id ? "#000000" : "#e2e8f0"
+                      }
                     />
                   )}
                   {index === 1 && (
                     <GemIcon
                       strokeWidth={2.25}
                       size={30}
-                      color={isSelected === index ? "#000000" : "#e2e8f0"}
+                      color={
+                        selectedPlan.id === plan.id ? "#000000" : "#e2e8f0"
+                      }
                     />
                   )}
                   {index === 2 && (
                     <Landmark
                       strokeWidth={2.25}
                       size={30}
-                      color={isSelected === index ? "#000000" : "#e2e8f0"}
+                      color={
+                        selectedPlan.id === plan.id ? "#000000" : "#e2e8f0"
+                      }
                     />
                   )}
                   <div className="flex items-center justify-between flex-1">
@@ -99,7 +92,7 @@ const Modal = () => {
                       <p
                         className={clsx(
                           "font-semibold md:text-lg leading-none",
-                          isSelected === index ? "" : "text-slate-200"
+                          selectedPlan.id === plan.id ? "" : "text-slate-200"
                         )}
                       >
                         {plan.credits} credits
@@ -113,7 +106,7 @@ const Modal = () => {
                     <p
                       className={clsx(
                         "font-semibold text-xl md:text-2xl",
-                        isSelected === index ? "" : "text-slate-200"
+                        selectedPlan.id === plan.id ? "" : "text-slate-200"
                       )}
                     >
                       {plan.price}$
@@ -122,14 +115,7 @@ const Modal = () => {
                 </div>
               ))}
             </div>
-            <button
-              onClick={() => setIsSelected(2)}
-              className=" bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 py-2  w-full rounded-md border-2 border-slate-500"
-            >
-              <p className="text-xl md:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-slate-300 to-slate-300">
-                Next
-              </p>
-            </button>
+            <CheckOutButton plan={selectedPlan} />
           </div>
         </CardContent>
       </Card>

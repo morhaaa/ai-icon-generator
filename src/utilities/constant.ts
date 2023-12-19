@@ -62,8 +62,26 @@ export const iconsHome: Icon[] = [
 ];
 export const imagesOptions = [1, 2, 3, 4, 5, 6, 7, 8];
 
-export const plans = [
-  { price: 5, credits: 50, description: "0.10$ per image" },
-  { price: 9, credits: 100, description: "0.10$ per image" },
-  { price: 20, credits: 250, description: "0.10$ per image" },
+export const plans: Plan[] = [
+  {
+    price: 5,
+    credits: 50,
+    name: "50 credits",
+    description: "0.10$ per image",
+    id: "pr_50",
+  },
+  {
+    price: 9,
+    credits: 100,
+    name: "50 credits",
+    description: "0.10$ per image",
+    id: "pr_100",
+  },
+  {
+    price: 20,
+    credits: 250,
+    name: "50 credits",
+    description: "0.10$ per image",
+    id: "pr_250",
+  },
 ];
