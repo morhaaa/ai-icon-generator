@@ -4,12 +4,11 @@ import { v4 as uuidv4 } from "uuid";
 import Icon from "@/model/icon";
 import User from "@/model/user";
 import { connect } from "@/utilities/db";
+import { uploadImage } from "@/firebase/storage";
 
 const openai = new OpenAI({
   apiKey: process.env.OPEN_API_KEY,
 });
-
-const basePATH = process.env.NEXTAUTH_URL ?? "";
 
 export async function POST(req: NextRequest) {
   try {
@@ -32,14 +31,27 @@ export async function POST(req: NextRequest) {
 
     const iconsCreated = await Promise.all(
       response.data.map(async (data) => {
-        const image = await fetch(data.url!);
-        const buffer = await image.arrayBuffer();
+        const imageReference = "icon-generated-" + uuidv4();
 
+        const responseFirebase = await uploadImage(
+          data.url!,
+          authorId,
+          imageReference
+        );
+
+        if (!responseFirebase.success) {
+          return NextResponse.json({
+            success: false,
+            data: "Failed to upload image",
+          });
+        }
+        console.log("prompt:", prompt);
+        console.log("openAiPRopmpt", openaiPrompt);
         const iconCreated = await Icon.create({
           prompt: prompt,
           authorId: authorId,
           generationId: generationId,
-          image: Buffer.from(buffer),
+          imageUrl: responseFirebase.imageUrl,
         });
 
         if (iconCreated) {
