@@ -26,7 +26,7 @@ export async function GET(request: NextRequest, params: Params) {
     if (iconsData) {
       const icons: Icon[] = iconsData.map((icon) => ({
         authorId: icon.authorId,
-        image: icon.image,
+        imageUrl: icon.imageUrl,
         prompt: icon.prompt,
         generationId: icon.generationId,
       }));
