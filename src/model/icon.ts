@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const iconSchema = new Schema({
-  image: { type: Buffer, required: true, timestamps: true },
+  imageUrl: { type: String, required: true, timestamps: true },
   prompt: { type: String, required: true, timestamps: true },
   authorId: { type: String, required: true, timestamps: true },
   generationId: { type: String, required: true, timestamps: true },
