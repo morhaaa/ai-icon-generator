@@ -36,7 +36,7 @@ const Step4: React.FC<Props> = ({ creditsLeft }) => {
 
         <div className="flex w-full flex-col gap-4  ">
           <Select
-            onValueChange={(value) => {
+            onValueChange={(value: string) => {
               setValueSelector(value);
             }}
           >
@@ -57,7 +57,7 @@ const Step4: React.FC<Props> = ({ creditsLeft }) => {
           </Select>
           <div className="text-sm  px-1 flex gap-2 md:gap-2 items-center">
             <h3 className="text-white">Credits left:</h3>
-            <h3 className="text-green-500  text-xs font-bold h-6 w-6 border-2 border-green-500 rounded-full flex items-center justify-center">
+            <h3 className="text-green-500  text-xs font-bold h-7 w-7 border-2 border-green-500 rounded-full flex items-center justify-center">
               {" "}
               {creditsLeft}
             </h3>

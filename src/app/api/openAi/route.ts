@@ -4,8 +4,6 @@ import { v4 as uuidv4 } from "uuid";
 import Icon from "@/model/icon";
 import User from "@/model/user";
 import { connect } from "@/utilities/db";
-import { updateUserBalance } from "@/containers/user-reducer";
-import { store } from "@/containers/store";
 
 const openai = new OpenAI({
   apiKey: process.env.OPEN_API_KEY,
@@ -17,47 +15,54 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const generationId = uuidv4();
-    const fakeUrl =
-      "https://media.macphun.com/img/uploads/customer/how-to/608/15542038745ca344e267fb80.28757312.jpg?q=85&w=1340";
 
     const { prompt, color, style, n, authorId } = body;
 
-    // Commentato temporaneamente in attesa della configurazione di openai.images
-    // const response = await openai.images.generate({
-    //   model: "dall-e-3",
-    //   prompt,
-    //   n: 1, //parseInt(n, 10),
-    //   size: "1024x1024",
-    // });
-
-    const openAiRes = {
-      prompt: prompt,
-      url: fakeUrl,
-      authorId: authorId,
-      generationId: generationId,
-    };
-
     await connect();
-    const image = await fetch(openAiRes.url);
-    const buffer = await image.arrayBuffer();
 
-    const iconCreated = await Icon.create({
-      prompt: prompt,
-      authorId: authorId,
-      generationId: generationId,
-      image: Buffer.from(buffer),
-    });
-
+    const openaiPrompt = `Create an icon of a ${prompt} with a ${color} background in a ${style} style.`;
     const user = await User.findById(authorId);
 
-    if (iconCreated) {
-      user.balance = user.balance - 1;
+    const response = await openai.images.generate({
+      model: "dall-e-2",
+      prompt: openaiPrompt,
+      n: parseInt(n, 10),
+      size: "1024x1024",
+    });
 
-      await user.save();
+    const iconsCreated = await Promise.all(
+      response.data.map(async (data) => {
+        const image = await fetch(data.url!);
+        const buffer = await image.arrayBuffer();
 
+        const iconCreated = await Icon.create({
+          prompt: prompt,
+          authorId: authorId,
+          generationId: generationId,
+          image: Buffer.from(buffer),
+        });
+
+        if (iconCreated) {
+          user.balance = user.balance - 1;
+
+          await user.save();
+        }
+
+        const result = {
+          prompt: prompt,
+          url: data.url,
+          authorId: authorId,
+          generationId: generationId,
+        };
+
+        return result;
+      })
+    );
+
+    if (iconsCreated.length > 0) {
       return NextResponse.json({
         success: true,
-        data: iconCreated,
+        data: iconsCreated,
         generationId: generationId,
         newBalance: user.balance,
       });
@@ -68,7 +73,7 @@ export async function POST(req: NextRequest) {
       });
     }
   } catch (error) {
-    console.error("[ERRORE IMMAGINE]", error);
+    console.error("[ERROR IMAGES]", error);
     return NextResponse.json({ message: error, status: 500 });
   }
 }

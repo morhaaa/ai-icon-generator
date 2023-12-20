@@ -60,7 +60,7 @@ export const iconsHome: Icon[] = [
   { img: "", style: "Clay" },
   { img: "", style: "Gradient" },
 ];
-export const imagesOptions = [1, 2, 3, 4, 5, 6, 7, 8];
+export const imagesOptions = [1, 2, 3, 4, 5];
 
 export const plans: Plan[] = [
   {
