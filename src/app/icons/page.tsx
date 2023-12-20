@@ -18,9 +18,12 @@ const Icons: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  console.log(icons);
+
   //redux
   const user = useSelector((store: StoreType) => store.user.value);
 
+  //pagination
   const iconsPerPage = 10;
   const totalPages = Math.ceil(icons.length / iconsPerPage);
 
@@ -29,6 +32,7 @@ const Icons: React.FC = () => {
     currentPage * iconsPerPage
   );
 
+  //Get Info icons
   useEffect(() => {
     if (user?.id) {
       const basePath = `/api/icons/${user.id}`;
@@ -41,7 +45,7 @@ const Icons: React.FC = () => {
           const res = await fetch(path);
 
           const result = await res.json();
-          console.log(result);
+          console.log(result.data);
           setIcons(result.data);
         } catch (e) {
           console.log(e);
