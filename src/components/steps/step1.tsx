@@ -6,14 +6,14 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { ReactEventHandler, useState } from "react";
 import { useDispatch } from "react-redux";
 
 interface Props {}
 const Step1: React.FC<Props> = () => {
   const dispatch = useDispatch();
 
-  const handleInput = (txt: string): void => {
+  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const txt = event.currentTarget.value
     dispatch(setInputText(txt));
   };
 
@@ -27,7 +27,7 @@ const Step1: React.FC<Props> = () => {
         <InputGenerator
           placeholder="a happy turtle"
           size="medium"
-          onChange={handleInput}
+          onChange={(e)=>handleInput(e)}
         />
         <div className=" text-white flex gap-2 items-center">
           <p className="text-xs lg:text-sm">

@@ -6,7 +6,7 @@ interface Props {
   size: "small" | "medium";
   placeholder: string;
   value?: string;
-  onChange?: (text: string) => void;
+  onChange?: (text: React.ChangeEvent<HTMLInputElement>) => void;
   textButton?: string;
   submit?: (text: string) => void;
 }
@@ -22,10 +22,9 @@ const InputGenerator: React.FC<Props> = ({
   const [inputText, setInputText] = useState<string>("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    event.preventDefault();
     setInputText(event.currentTarget.value);
     if (onChange) {
-      onChange(inputText);
+      onChange(event);
     }
   };
 
