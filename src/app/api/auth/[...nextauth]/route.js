@@ -4,8 +4,6 @@ import User from "@/model/user";
 import { connect } from "@/utilities/db";
 import { NextResponse } from "next/server";
 
-const basePATH = process.env.NEXTAUTH_URL ?? "";
-
 const authOptions = {
   providers: [
     GoogleProvider({
@@ -39,7 +37,6 @@ const authOptions = {
               balance: 1,
             });
 
-            console.log(userCreated);
 
             return NextResponse.json({
               message: "User created",

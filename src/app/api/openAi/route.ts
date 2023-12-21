@@ -45,8 +45,6 @@ export async function POST(req: NextRequest) {
             data: "Failed to upload image",
           });
         }
-        console.log("prompt:", prompt);
-        console.log("openAiPRopmpt", openaiPrompt);
         const iconCreated = await Icon.create({
           prompt: prompt,
           authorId: authorId,

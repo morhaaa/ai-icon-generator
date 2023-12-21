@@ -18,8 +18,6 @@ const Icons: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  console.log(icons);
-
   //redux
   const user = useSelector((store: StoreType) => store.user.value);
 
@@ -45,7 +43,6 @@ const Icons: React.FC = () => {
           const res = await fetch(path);
 
           const result = await res.json();
-          console.log(result.data);
           setIcons(result.data);
         } catch (e) {
           console.log(e);
