@@ -56,7 +56,7 @@ const Icons: React.FC = () => {
   }, [user, generationId]);
 
   return (
-    <section className="h-full w-full overflow-scroll">
+    <section className="h-full w-full overflow-auto">
       <div className="min-h-[100vh] w-full flex flex-col items-center gap-2 overflow-hidden py-12 px-8 md:px-16 lg:px-20">
         <h2 className="w-full text-white text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-medium pb-2 border-b border-slate-600 ">
           My Icons

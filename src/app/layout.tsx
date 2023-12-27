@@ -34,7 +34,7 @@ export default function RootLayout({
           <Toaster />
           <Navbar />
           <Modal />
-          <main className="h-full w-full overflow-scroll">
+          <main className="h-full w-full overflow-y-auto">
             <NextTopLoader
               color="#2299DD"
               initialPosition={0.08}

@@ -48,7 +48,7 @@ const Step2: React.FC = () => {
         </nav>
 
         {/*Colors*/}
-        <div className="flex items-center justify-center h-full w-full  bg-gradient-to-br from-black via-slate-900 to-black border border-slate-700 rounded-xl overflow-y-scroll overflow-x-none">
+        <div className="flex items-center justify-center h-full w-full  bg-gradient-to-br from-black via-slate-900 to-black border border-slate-700 rounded-xl overflow-y-auto overflow-x-none">
           {selectedSection === "Predefined" ? (
             <ColorSelection
               selectedColor={selectedColor}
