@@ -4,7 +4,7 @@ import React from 'react'
 export default function TermsAndConditions() {
   return (
     <section className="h-full w-full overflow-auto">
-      <div className="px-60 my-20 text-slate-300">
+     <div className="sm:px-4 md:px-8 lg:px-16 xl:px-24 2xl:px-60 my-8 sm:my-12 lg:my-16 text-slate-300">
         <h1 className="text-2xl font-bold mb-4">Terms of Service</h1>
         <p className="mb-4">Effective Date: June 12, 2023</p>
 
