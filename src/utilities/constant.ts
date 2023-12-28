@@ -85,3 +85,9 @@ export const plans: Plan[] = [
     id: "pr_250",
   },
 ];
+
+export const footerLinks = [
+  {href:'', text: 'Terms & Conditions'},
+  {href:'', text: 'Privacy Policy'},
+  {href:'', text: 'Refound Policy'}
+]
