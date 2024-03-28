@@ -4006,6 +4006,13 @@ radix@^0.0.0:
   resolved "https://registry.yarnpkg.com/radix/-/radix-0.0.0.tgz#03f46d73b52c3919084b9496b4d4540c060e7e2d"
   integrity sha512-7hNRr3nbJH3vMepLpg5Je0B6ezlW8PdZuaPI79vVE2BslBKOOpP5/q9GILJ9JFFlhqNorDe4EFMwTkzlskyUUg==
 
+react-alice-carousel@^2.9.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/react-alice-carousel/-/react-alice-carousel-2.9.0.tgz#767fd08c5e635b26b5a54285276bdb5e104e9586"
+  integrity sha512-Tr8v32eZsFIvvKwzz83h3jgzno38CQdpbZtaNo7FmNfRZ+KQEPRFPJCXcDlS+q0fK38JKdUUQJ5vPK+JP3cbxg==
+  dependencies:
+    vanilla-swipe "^2.4.1"
+
 react-color@^2.19.3:
   version "2.19.3"
   resolved "https://registry.yarnpkg.com/react-color/-/react-color-2.19.3.tgz#ec6c6b4568312a3c6a18420ab0472e146aa5683d"
@@ -4823,6 +4830,11 @@ uuid@^9.0.1:
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.1.tgz#e188d4c8853cc722220392c424cd637f32293f30"
   integrity sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==
+
+vanilla-swipe@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/vanilla-swipe/-/vanilla-swipe-2.4.1.tgz#697d58bde3729db3c80fd3de488a54a8eae05664"
+  integrity sha512-o6pfI0dipet88ZnPLV4Jx04Ia+U3xANh14vhROW2TOe/mrwk2JGG68+Z0BPoD1YUcQQEnK4SZBXkqFe+K1l7/w==
 
 watchpack@2.4.0:
   version "2.4.0"
