@@ -12,8 +12,8 @@ import {
 
 const Tutorial: React.FC = () => {
   return (
-    <section className="w-full h-full flex flex-col gap-6 xl:gap-16 py-20 px-6 lg:px-8 xl:px-14 bg-gradient-to-b from-transparent via-black/30 to-black/80 ">
-      <div className="flex flex-col justify-center items-center text-white  text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center ">
+    <section className="w-full h-full flex flex-col gap-6 xl:gap-20 py-20 px-6 lg:px-8 xl:px-14 bg-gradient-to-b from-transparent via-fuchsia-100/40 to-transparent">
+      <div className="flex flex-col justify-center items-center text-slate-900 text-3xl md:text-4xl lg:text-5xl  text-center ">
         <h1 className=" font-bold">
           How does it{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-fuchsia-300 to-fuchsia-500">
@@ -22,12 +22,10 @@ const Tutorial: React.FC = () => {
         </h1>
       </div>
       {/* Step 1*/}
-      <div className="text-white flex flex-col border-l-4  md:flex-row items-center gap-10 px-6 md:px-6 xl:px-10 py-6">
-        <div className="basis-1/2  border-slate-50 ">
-          <h4 className="text-xl md:text-lg lg:text-xl xl:text-2xl font-bold">
-            Step 1: Enter a prompt
-          </h4>
-          <p className=" text-slate-400 py-2 text-sm md:text-base">
+      <div className="text-slate-600 flex flex-col border-l-4  md:flex-row items-center gap-12 px-6 md:px-6 py-6">
+        <div className="basis-1/2  border-slate-600 ">
+          <h4 className="md:text-lg font-bold">Step 1: Enter a prompt</h4>
+          <p className=" text-slate-400 py-2">
             The first step in generating an icon is entering a prompt. A prompt
             is a short description or context that helps us understand the icon
             you want to create.
@@ -46,10 +44,10 @@ const Tutorial: React.FC = () => {
         </div>
       </div>
       {/* Step 2*/}
-      <div className="text-white flex items-center gap-10 flex-col-reverse  md:flex-row border-r-4  px-6 md:px-6 xl:px-10 py-6">
+      <div className="text-white flex items-center gap-12 flex-col-reverse  md:flex-row border-r-4  px-6 md:px-6 py-6">
         <div className="basis-1/2 flex items-center justify-center">
           <NeonBorder>
-            <div className="p-4 flex  gap-4">
+            <div className="p-4 flex  gap-4 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 border border-slate-700 drop-shadow-2xl shadow-xl rounded-lg">
               {colorListHome.map((color, index) => (
                 <div
                   key={index}
@@ -63,11 +61,11 @@ const Tutorial: React.FC = () => {
             </div>
           </NeonBorder>
         </div>
-        <div className="basis-1/2  border-slate-50  text-right">
-          <h4 className="md:text-lg lg:text-xl xl:text-2xl font-bold">
+        <div className="basis-1/2  text-right">
+          <h4 className="md:text-lg font-bold text-slate-600">
             Step 2: Select a color
           </h4>
-          <p className="  text-slate-400 py-2text-sm md:text-base">
+          <p className="  text-slate-400 py-2">
             In this step, choose the color for your icon. Pick the color that
             best matches your vision for the icon
           </p>
@@ -75,19 +73,19 @@ const Tutorial: React.FC = () => {
       </div>
 
       {/* Step 3*/}
-      <div className="text-white flex  gap-10 flex-col  md:flex-row border-l-4 px-6 md:px-6 xl:px-10 py-6">
+      <div className="text-white flex gap-12 flex-col md:flex-row border-l-4 px-6 md:px-6 py-6">
         <div className="basis-1/2 border-slate-50 text-left">
-          <h4 className="md:text-lg lg:text-xl xl:text-2xl font-bold">
+          <h4 className="md:text-lg text-slate-600 font-bold">
             Step 3: Select a style
           </h4>
-          <p className="  text-slate-400 py-2  text-sm md:text-base">
+          <p className="text-slate-400 py-2">
             Here you can choose the style for your icon. We offer a variety of
             options for your needs
           </p>
         </div>
         <div className="basis-1/2 flex items-center justify-center">
           <NeonBorder>
-            <div className="p-2 md:p-4 flex gap-2 md:gap-4">
+            <div className="p-2 md:p-4 flex gap-2 md:gap-4 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 border border-slate-700 drop-shadow-2xl shadow-xl rounded-lg">
               {iconsHome.map((icon, index) => (
                 <div
                   key={index}
@@ -107,7 +105,7 @@ const Tutorial: React.FC = () => {
       </div>
 
       {/* Step 4*/}
-      <div className="text-white flex items-center gap-10  flex-col-reverse  md:flex-row border-r-4 px-6 md:px-6 xl:px-10 py-6">
+      <div className="text-white flex items-center gap-12 flex-col-reverse md:flex-row border-r-4 px-6 md:px-6 py-6">
         <div className="basis-1/2 flex items-center justify-center">
           <NeonBorder>
             <Select>
@@ -128,11 +126,11 @@ const Tutorial: React.FC = () => {
             </Select>
           </NeonBorder>
         </div>
-        <div className="basis-1/2   border-slate-50  text-right">
-          <h4 className="md:text-lg lg:text-xl xl:text-2xl font-bold">
+        <div className="basis-1/2  border-slate-50 text-right">
+          <h4 className="md:text-lg font-bold text-slate-600">
             Step 4: Choose number for your icons
           </h4>
-          <p className="  text-slate-400 py-2 text-sm md:text-base">
+          <p className="  text-slate-400 py-2">
             Finally, you specify the number of icons you want to generate.
             Whether you need a single icon or a set of multiple icons
           </p>
