@@ -12,9 +12,6 @@ export default function Home() {
         <Presentation />
         <Tutorial />
         <JoinUs />
-        <div className=" bg-black/90">
-          <Footer />
-        </div>
       </main>
     </main>
   );

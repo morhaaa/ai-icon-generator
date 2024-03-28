@@ -8,6 +8,7 @@ import Modal from "@/components/modal-credits";
 import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import NextTopLoader from "nextjs-toploader";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,15 +27,14 @@ export default function RootLayout({
       <html lang="en">
         <body
           className={cn(
-            "bg-gradient-to-br from-blue-900 via-indigo-900 to-violet-900 h-screen w-screen flex flex-col items-center overflow-hidden",
-            inter.className
+            "bg-gradient-to-br from-purple-100/10 via-fuchsia-100/10 to-pink-100/20 h-screen w-screen flex flex-col items-center overflow-hidden"
           )}
         >
           <Analytics />
           <Toaster />
-          <Navbar />
           <Modal />
           <main className="h-full w-full overflow-y-auto">
+            <Navbar />
             <NextTopLoader
               color="#2299DD"
               initialPosition={0.08}
@@ -46,6 +46,7 @@ export default function RootLayout({
               shadow="0 0 10px #2299DD,0 0 5px #2299DD"
             />
             {children}
+            <Footer />
           </main>
         </body>
       </html>

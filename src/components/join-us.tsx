@@ -20,8 +20,8 @@ const JoinUs: React.FC = () => {
   };
 
   return (
-    <section className="w-full flex flex-col items-center justify-center pb-28 pt-10  px-4 gap-10 lg:gap-12 xl:gap-16 bg-black/80">
-      <div className="flex flex-col justify-center gap-4 items-center text-white text-4xl md:text-4xl lg:text-5xl xl:text-6xl">
+    <section className="w-full flex flex-col items-center justify-center pb-28 pt-10  px-4 gap-10 lg:gap-12 xl:gap-16 bg-gradient-to-b from-bg-transparent via-fuchsia-100/60 to-fuchsia-100/60">
+      <div className="flex flex-col justify-center gap-4 items-center text-slate-900 text-4xl md:text-4xl lg:text-5xl xl:text-6xl">
         <h1 className=" font-bold">
           Join{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-fuchsia-300 to-fuchsia-500">
@@ -41,7 +41,7 @@ const JoinUs: React.FC = () => {
           <p className="font-extrabold text-transparent  text-3xl md:text-4xl lg:text-5xl xl:text-6xl bg-clip-text  bg-gradient-to-br from-fuchsia-300 to-fuchsia-500">
             2300
           </p>
-          <p className="font-medium text-white text-2xl md:text-3xl lg:text-5xl xl:text-6xl">
+          <p className="font-black text-slate-900 text-2xl md:text-3xl lg:text-4xl">
             Users
           </p>
         </div>
@@ -50,7 +50,7 @@ const JoinUs: React.FC = () => {
           <p className="font-extrabold text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-6xl  bg-clip-text bg-gradient-to-br from-fuchsia-300 to-fuchsia-500">
             2500
           </p>
-          <p className="text-white font-medium  text-2xl md:text-3xl lg:text-5xl xl:text-6xl">
+          <p className="text-slate-900 font-black  text-2xl md:text-3xl lg:text-4xl">
             Icons
           </p>
         </div>
@@ -58,7 +58,7 @@ const JoinUs: React.FC = () => {
       <div className="">
         <NeonBorder>
           <Button onClick={startGeneration}>
-            <p className=" text-lg md:text-xl lg:text-2xl xl:text-3xl md:p-1 lg:p-2 lg:p-3">
+            <p className=" text-lg md:text-xl lg:text-xl md:p-1 lg:p-2 ">
               {" "}
               Start Now!
             </p>
