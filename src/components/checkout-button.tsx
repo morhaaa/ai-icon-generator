@@ -50,7 +50,7 @@ export default function CheckOutButton({ plan }: CheckOutButtonProps) {
       onClick={() => checkout()}
       className=" bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 py-2  w-full rounded-md border border-slate-400"
     >
-      <p className="text-slate-100 text-xl md:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-slate-300 to-slate-300">
+      <p className="text-slate-50 text-xl md:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-slate-300 to-slate-300">
         Next
       </p>
     </button>

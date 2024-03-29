@@ -42,7 +42,7 @@ const InputGenerator: React.FC<Props> = ({
     <form
       onSubmit={handleSubmit}
       className={clsx(
-        "w-full bg-white rounded-xl bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 border border-slate-700 drop-shadow-2xl shadow-xl flex justify-between items-center",
+        "w-full bg-white rounded-xl bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 border border-slate-700 drop-shadow flex justify-between items-center",
         {
           "p-1 md:p-1 ": size === "medium",
           "p-0.5": size === "small",

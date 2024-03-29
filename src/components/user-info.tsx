@@ -43,17 +43,17 @@ const UserInfo: React.FC<Props> = ({ user, logOut, image }) => {
           className="rounded-full cursor-pointer shadow-xl"
         />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-64 rounded-xl border-slate-500 bg-gradient-to-br from-indigo-950 via-indigo-950 to-blue-950  text-white mr-6">
+      <DropdownMenuContent className="w-64 rounded-xl border-slate-200 bg-gradient-to-b from-transparent via-fuchsia-100/20 to-fuchsia-100/60   text-slate-900 mr-6">
         <DropdownMenuLabel className=" px-3 py-2 flex flex-col">
           <p className="text-lg">{truncateString(user.name, 20)}</p>
-          <p className="text-green-500 font-semibold">
+          <p className="text-fuchsia-500 font-semibold">
             Balance: {user.balance}
           </p>
         </DropdownMenuLabel>
-        <DropdownMenuSeparator className="bg-slate-500" />
+        <DropdownMenuSeparator className="bg-slate-300" />
         <DropdownMenuGroup>
           <DropdownMenuItem
-            className="py-2 cursor-pointer"
+            className="py-2 cursor-pointer hover:bg-slate-200"
             onClick={() => router.push("/generator")}
           >
             <ImagePlus className="mr-2 h-5 w-5" />
@@ -74,7 +74,7 @@ const UserInfo: React.FC<Props> = ({ user, logOut, image }) => {
             <span className="text-lg px-2">Buy credits</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
-        <DropdownMenuSeparator className="bg-slate-500" />
+        <DropdownMenuSeparator className="bg-slate-300" />
         <DropdownMenuItem
           className="py-2 cursor-pointer"
           onClick={() => logOut()}

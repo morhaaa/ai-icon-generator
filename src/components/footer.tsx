@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="border-t border-slate-500/10 py-4 flex flex-col items-center gap-y-2 px-6 text-slate-600 text-xs w-full bg-fuchsia-100/60">
+    <footer className="border-t border-slate-300/20 py-4 flex flex-col items-center gap-y-2 px-6 text-slate-600 text-xs w-full bg-fuchsia-100/60">
       <div className="flex gap-4">
         {footerLinks.map((link, index) => (
           <Link
