@@ -31,14 +31,16 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="w-full flex justify-between items-center px-5 py-2">
-      <div className={monserrat.className}>
-        <Link href="/">
-          <p className="font-semibold text-slate-900 text-xl cursor-pointer">
-            AIconGenerator
-          </p>
-        </Link>
-      </div>
+    <nav className="w-full flex justify-between items-center px-10 py-2 border-b border-slate-100">
+      <Link href="/">
+        <p className="font-semibold text-slate-900 cursor-pointer text-xl">
+          A
+          <span className="text-transparent bg-clip-text bg-gradient-to-br from-fuchsia-300 to-fuchsia-500">
+            Icon
+          </span>
+          Generator
+        </p>
+      </Link>
       {user !== null ? (
         <UserInfo
           user={user}
