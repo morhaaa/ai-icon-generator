@@ -73,21 +73,21 @@ export const plans: Plan[] = [
   {
     price: 9,
     credits: 100,
-    name: "50 credits",
-    description: "0.10$ per image",
+    name: "100 credits",
+    description: "0.09$ per image",
     id: "pr_100",
   },
   {
     price: 20,
     credits: 250,
-    name: "50 credits",
-    description: "0.10$ per image",
+    name: "250 credits",
+    description: "0.08$ per image",
     id: "pr_250",
   },
 ];
 
 export const footerLinks = [
-  {href:'', text: 'Terms & Conditions'},
-  {href:'', text: 'Privacy Policy'},
-  {href:'', text: 'Refound Policy'}
-]
+  { href: "", text: "Terms & Conditions" },
+  { href: "", text: "Privacy Policy" },
+  { href: "", text: "Refound Policy" },
+];
