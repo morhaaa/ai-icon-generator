@@ -22,7 +22,7 @@ const Icons: React.FC = () => {
   const user = useSelector((store: StoreType) => store.user.value);
 
   //pagination
-  const iconsPerPage = 10;
+  const iconsPerPage = 12;
   const totalPages = Math.ceil(icons.length / iconsPerPage);
 
   const paginatedIcons = icons.slice(
@@ -56,12 +56,15 @@ const Icons: React.FC = () => {
   }, [user, generationId]);
 
   return (
-    <section className="h-full w-full overflow-auto">
+    <section className="h-full w-full overflow-auto bg-gradient-to-b from-transparent via-fuchsia-100/20 to-fuchsia-100/60">
       <div className="min-h-[100vh] w-full flex flex-col items-center gap-2 overflow-hidden py-12 px-8 md:px-16 lg:px-20">
-        <h2 className="w-full text-white text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-medium pb-2 border-b border-slate-600 ">
-          My Icons
+        <h2 className="w-full text-slate-900 font-black text-3xl md:text-3xl lg:text-4xl xl:text-5xl pb-6 border-b border-slate-200 ">
+          My{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-br from-fuchsia-300 to-fuchsia-500">
+            icons
+          </span>{" "}
         </h2>
-        <div className="flex-1 flex w-full overflow-hidden py-4">
+        <div className="flex-1 flex w-full overflow-hidden py-4 pl-4 min-h-[84vh]">
           {isLoading ? (
             <div className="flex-1 w-full flex items-center justify-center">
               <Lottie
@@ -91,7 +94,7 @@ const Icons: React.FC = () => {
                   className={clsx(
                     "border shadow-2xl text-white h-8 w-8 rounded-md",
                     index + 1 === currentPage
-                      ? "border-slate-400 bg-gray-700/70"
+                      ? "border-slate-300 bg-gray-300/70 cursor-default"
                       : "bg-slate-900/70  border-slate-700"
                   )}
                 >
@@ -101,7 +104,6 @@ const Icons: React.FC = () => {
             : null}
         </div>
       </div>
-      <Footer />
     </section>
   );
 };
