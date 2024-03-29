@@ -3,9 +3,10 @@ import React, { useState, useEffect, ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
+  disabled?: boolean;
 }
 
-const NeonBorder: React.FC<Props> = ({ children }) => {
+const NeonBorder: React.FC<Props> = ({ children, disabled = false }) => {
   const colors = ["#d8b4fe", "#c084fc", "#a855f7", "#9333ea", "#7e22ce"];
   const [currentColorIndex, setCurrentColorIndex] = useState(0);
 
@@ -19,6 +20,8 @@ const NeonBorder: React.FC<Props> = ({ children }) => {
   }, [currentColorIndex, colors.length]);
 
   const currentColor = colors[currentColorIndex];
+
+  if (disabled) return children;
 
   return (
     <div
