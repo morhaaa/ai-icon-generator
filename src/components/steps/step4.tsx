@@ -27,11 +27,13 @@ const Step4: React.FC<Props> = ({ creditsLeft }) => {
   return (
     <div className="w-full h-full flex flex-col justify-between">
       <div className="flex flex-col gap-4 justify-start">
-        <div className="flex flex-col gap-1">
-          <h2 className="text-white font-medium text-lg md:text-xl lg:text-2xl ">
+        <div className="flex flex-col">
+          <h2 className="text-slate-900 font-bold text-lg md:text-xl lg:text-2xl ">
             Select number of icons
           </h2>
-          <h3 className="text-sm text-white font-light">1 credit per image</h3>
+          <h3 className="text-sm text-slate-600 font-medium">
+            1 credit per image
+          </h3>
         </div>
 
         <div className="flex w-full flex-col gap-4  ">
@@ -55,14 +57,14 @@ const Step4: React.FC<Props> = ({ creditsLeft }) => {
               ))}
             </SelectContent>
           </Select>
-          <div className="text-sm  px-1 flex gap-2 md:gap-2 items-center">
-            <h3 className="text-white">Credits left:</h3>
-            <h3 className="text-green-500  text-xs font-bold h-7 w-7 border-2 border-green-500 rounded-full flex items-center justify-center">
+          <div className="text-sm font-semibold px-1 flex gap-1 items-center">
+            <h3 className="text-slate-600">Credits left:</h3>
+            <h3 className="text-fuchsia-500  text-xs font-bold h-7 w-7 border-2 border-fuchsia-500 rounded-full flex items-center justify-center">
               {" "}
               {creditsLeft}
             </h3>
             <h3
-              className="text-slate-400 px-2 md:px-4 underline underline-offset-2 cursor-pointer"
+              className="text-slate-400 px-2 md:px-4 underline underline-offset-2 font-light cursor-pointer"
               onClick={() => dispatch(openModal())}
             >
               {" "}

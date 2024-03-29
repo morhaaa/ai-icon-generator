@@ -77,14 +77,18 @@ const Form: React.FC<Props> = ({}) => {
   ];
 
   return (
-    <div className="py-12 px-8 md:px-16 lg:px-20 xl:px-24 flex flex-col">
-      <p className="text-white font-semibold text-3xl md:text-3xl lg:text-3xl xl:text-4xl text-center border-b pb-6 lg:pb-8 border-slate-600">
-        Let&apos;s generate your icons
+    <div className="flex flex-col">
+      <p className="text-slate-900 font-black text-3xl md:text-3xl lg:text-4xl xl:text-5xl border-b pb-6 border-slate-200">
+        Let&apos;s{" "}
+        <span className="text-transparent bg-clip-text bg-gradient-to-br from-fuchsia-300 to-fuchsia-500">
+          generate
+        </span>{" "}
+        your icons
       </p>
       {steps.map((step, index) => (
         <div
           key={index}
-          className="border-b border-slate-600 py-6 md:py-7 lg:py-8"
+          className="border-b border-slate-200 pt-8 pb-6 md:pb-7 lg:pb-16"
         >
           {step.tag}
         </div>
