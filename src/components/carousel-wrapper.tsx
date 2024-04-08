@@ -1,9 +1,10 @@
 import React from "react";
 import Carousels from "./carousel";
+import { iconsCarousel } from "@/utilities/constant";
 
 const CarouselsWrapper = () => {
-  const array1 = Array.from({ length: 60 }, (_) => "");
-  const array2 = Array.from({ length: 60 }, (_) => "");
+  const array1 = iconsCarousel;
+  const array2 = iconsCarousel;
 
   return (
     <div className="flex flex-col w-full justify-center items-center overflow-hidden relative pt-8">
