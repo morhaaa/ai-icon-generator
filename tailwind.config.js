@@ -67,18 +67,18 @@ module.exports = {
         },
         "slide-left": {
           from: { left: "0" },
-          to: { left: "-100%" },
+          to: { left: "-260%" },
         },
         "slide-right": {
-          from: { left: "-100%" },
+          from: { left: "-260%" },
           to: { left: "0" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "infinite-scroll-left": "slide-left 40s linear infinite",
-        "infinite-scroll-right": "slide-right 40s linear infinite",
+        "infinite-scroll-left": "slide-left 100s linear infinite",
+        "infinite-scroll-right": "slide-right 100s linear infinite",
       },
     },
   },
