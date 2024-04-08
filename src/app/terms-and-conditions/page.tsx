@@ -1,10 +1,10 @@
-import Footer from '@/components/footer'
-import React from 'react'
+import Footer from "@/components/footer";
+import React from "react";
 
 export default function TermsAndConditions() {
   return (
     <section className="h-full w-full overflow-auto">
-     <div className="sm:px-4 md:px-8 lg:px-16 xl:px-24 2xl:px-60 my-8 sm:my-12 lg:my-16 text-slate-300">
+      {/* <div className="sm:px-4 md:px-8 lg:px-16 xl:px-24 2xl:px-60 my-8 sm:my-12 lg:my-16 text-slate-300">
         <h1 className="text-2xl font-bold mb-4">Terms of Service</h1>
         <p className="mb-4">Effective Date: June 12, 2023</p>
 
@@ -130,7 +130,7 @@ export default function TermsAndConditions() {
         <p className="mb-4">If you have any questions about these Terms and Conditions, you can contact us:</p>
         <p className="mb-4">By email: yummygenerator@gmail.com</p>
       </div>
-      <Footer/>
+      <Footer/> */}
     </section>
-  )
+  );
 }
