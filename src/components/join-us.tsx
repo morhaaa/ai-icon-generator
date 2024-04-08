@@ -5,8 +5,32 @@ import { useSelector } from "react-redux";
 import { StoreType } from "@/containers/store";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
+import { useEffect, useState } from "react";
+import CountUp from "react-countup";
 
 const JoinUs: React.FC = () => {
+  const [users, setUsers] = useState<number>(1000);
+  const [posts, setPosts] = useState<number>(1000);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const res = await fetch("api/users");
+      const result = await res.json();
+      const totalUsers = result.data.totalUsers;
+      setUsers((prev) => prev + totalUsers);
+    };
+
+    const fetchPosts = async () => {
+      const res = await fetch("api/icons");
+      const result = await res.json();
+      const totalPosts = result.data.totalPosts;
+      setPosts((prev) => prev + totalPosts);
+    };
+
+    fetchUsers();
+    fetchPosts();
+  }, []);
+
   //router
   const router = useRouter();
 
@@ -39,7 +63,7 @@ const JoinUs: React.FC = () => {
       <div className="flex gap-10 md:gap-20 lg:gap-40 xl:gap-60">
         <div className="flex flex-col items-center">
           <p className="font-extrabold text-transparent  text-3xl md:text-4xl lg:text-5xl xl:text-6xl bg-clip-text  bg-gradient-to-br from-fuchsia-300 to-fuchsia-500">
-            2300
+            <CountUp start={1000} end={users} />
           </p>
           <p className="font-black text-slate-900 text-2xl md:text-3xl lg:text-4xl">
             Users
@@ -48,7 +72,7 @@ const JoinUs: React.FC = () => {
 
         <div className="flex flex-col items-center">
           <p className="font-extrabold text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-6xl  bg-clip-text bg-gradient-to-br from-fuchsia-300 to-fuchsia-500">
-            2500
+            <CountUp start={1000} end={posts} />
           </p>
           <p className="text-slate-900 font-black  text-2xl md:text-3xl lg:text-4xl">
             Icons
