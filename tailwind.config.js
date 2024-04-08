@@ -77,8 +77,8 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "infinite-scroll-left": "slide-left 100s linear infinite",
-        "infinite-scroll-right": "slide-right 100s linear infinite",
+        "infinite-scroll-left": "slide-left 150s linear infinite",
+        "infinite-scroll-right": "slide-right 150s linear infinite",
       },
     },
   },

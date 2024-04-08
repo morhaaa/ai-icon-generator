@@ -11,7 +11,7 @@ const Carousels: React.FC<CarouselsProps> = ({ direction, images }) => {
     <div className="overflow-hidden relative w-full  h-28">
       <div
         className={clsx(
-          "flex absolute left-0 justify-center items-center gap-8 w-[100%] ",
+          "flex absolute left-0 justify-center items-center gap-8 w-[200%] ",
           { "animate-infinite-scroll-left": direction === "left" },
           { "animate-infinite-scroll-right": direction === "right" }
         )}
