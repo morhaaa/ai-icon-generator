@@ -8,11 +8,13 @@ interface Props {
 
 const ColorPicker: React.FC<Props> = ({ setSelectedColor }) => {
   const [color, setColor] = useState<string>("#ff0000");
+  const [value, setValue] = useState<string>("#ff0000");
   const [isCorrect, setIsCorrect] = useState<boolean>(true);
 
   function checkValue(value: string): boolean {
+    const trimmedValue = value.trim();
     const hexRegex = /^#[0-9A-Fa-f]{6}$/g;
-    return hexRegex.test(value);
+    return hexRegex.test(trimmedValue);
   }
 
   const rgbToHex = (color: RgbColor): void => {
@@ -29,6 +31,7 @@ const ColorPicker: React.FC<Props> = ({ setSelectedColor }) => {
     const hexB = validB.toString(16).padStart(2, "0");
 
     setColor(`#${hexR}${hexG}${hexB}`);
+    setValue(`#${hexR}${hexG}${hexB}`);
     setSelectedColor(`#${hexR}${hexG}${hexB}`);
   };
 
@@ -53,10 +56,14 @@ const ColorPicker: React.FC<Props> = ({ setSelectedColor }) => {
     }
   };
 
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.currentTarget.value);
+  };
+
   return (
     <div className="h-full w-full flex items-center justify-center">
-      <div className="flex flex-col items-center justify-center gap-4 py-8 px-4 rounded-xl">
-        <div className="flex flex-col items-center justify-end bg-white rounded-xl ">
+      <div className="flex flex-col items-center justify-center  py-8 px-4 rounded-xl">
+        <div className="flex flex-col items-center justify-end bg-white rounded-xl mb-4 ">
           <RgbColorPicker onChange={rgbToHex} color={hexToRgb(color)} />
           <div className="py-2 bg-white">
             <span className="">{color}</span>
@@ -68,10 +75,14 @@ const ColorPicker: React.FC<Props> = ({ setSelectedColor }) => {
           placeholder="#ff0000"
           textButton="Confirm"
           submit={submit}
+          onChange={handleChange}
+          value={value}
         />
 
         {!isCorrect && (
-          <p className="text-red-500 font-bold underline">Insert HEX color</p>
+          <p className="text-red-500 mt-1 text-sm font-bold ">
+            Insert correct HEX color
+          </p>
         )}
       </div>
     </div>

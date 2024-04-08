@@ -6,7 +6,6 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import clsx from "clsx";
-import Footer from "@/components/footer";
 import Lottie from "lottie-react";
 import Loading from "@/utilities/loading-animation.json";
 
@@ -58,7 +57,7 @@ const Icons: React.FC = () => {
   return (
     <section className="h-full w-full overflow-auto bg-gradient-to-b from-transparent via-fuchsia-100/20 to-fuchsia-100/60">
       <div className="min-h-[100vh] w-full flex flex-col items-center gap-2 overflow-hidden py-12 px-8 md:px-16 lg:px-20">
-        <h2 className="w-full text-slate-900 font-black text-3xl md:text-3xl lg:text-4xl xl:text-5xl pb-6 border-b border-slate-200 ">
+        <h2 className="w-full text-slate-900 font-bold text-3xl md:text-3xl lg:text-4xl xl:text-5xl pb-6 border-b border-slate-200 ">
           My{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-fuchsia-300 to-fuchsia-500">
             icons

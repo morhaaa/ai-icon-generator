@@ -25,7 +25,7 @@ const Step1: React.FC<Props> = () => {
       {/*Content */}
       <div className="flex flex-col gap-2">
         <InputGenerator
-          placeholder="a happy turtle"
+          placeholder="a happy panda"
           size="medium"
           onChange={(e) => handleInput(e)}
         />
