@@ -19,13 +19,13 @@ export async function POST(req: NextRequest) {
 
     await connect();
 
-    const openaiPrompt = `Create an icon of a ${prompt} with a ${color} background in a ${style} style.`;
+    const openaiPrompt = `Create one ${style}-style logo of ${prompt}. The logo has a fully ${color} background, The logo is without typography`;
     const user = await User.findById(authorId);
 
     const response = await openai.images.generate({
-      model: "dall-e-2",
+      model: "dall-e-3",
       prompt: openaiPrompt,
-      n: parseInt(n, 10),
+      n: 1,
       size: "1024x1024",
     });
 
