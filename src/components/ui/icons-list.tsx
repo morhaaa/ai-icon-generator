@@ -25,13 +25,17 @@ const IconsList: React.FC<Props> = ({ setSelectedIcon, selectedIcon }) => {
                 icon.style === selectedIcon?.style
                   ? "4px solid white"
                   : "4px solid transparent",
+              borderRadius: "0.8rem",
             }}
           >
             <Image
               height={90}
               width={90}
-              src="/assets/draft.png"
+              src={`/assets/icons-style/${icon.img}`}
               alt={icon.style}
+              className="rounded-lg"
+              placeholder="blur"
+              blurDataURL={"/assets/icons-style/${icon.img}"}
             />
           </div>
           <p className="text-white text-xs md:text-sm lg:text-sm">
